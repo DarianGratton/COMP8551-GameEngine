@@ -1,6 +1,8 @@
 #include "Scene.h"
 
 #include "logger.h"
+#include <entityx/entityx.h>
+#include "engine.h"
 
 #include <tmxlite/Map.hpp>
 #include <tmxlite/Layer.hpp>
@@ -40,6 +42,8 @@ void Scene::load() {
     }
 
     //populate list of entities with their components
+    Entity e = Engine::getInstance().entities.create();
+    e.assign<CustomScript>("src/CustomScripts/XmlExampleCustomScript.xml");
 
 }
 
