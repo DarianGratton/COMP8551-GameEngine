@@ -92,25 +92,14 @@ void Engine::update() {
     lastTime += deltaTime;
     TimeDelta dt = deltaTime.count();
     dt *= 0.001f; //convert to seconds
+
     
-    //do updates
-    // input
-    // -----
-    //processInput(window); //probs in InputSystem
     systems.update<InputSystem>(dt);
     systems.update<PhysicsSystem>(dt);
     systems.update<SoundSystem>(dt);
     systems.update<CustomScriptSystem>(dt);
     systems.update<RenderingSystem>(dt);
 }
-
-// process all input: query GLFW whether relevant keys are pressed/released this frame and react accordingly
-// ---------------------------------------------------------------------------------------------------------
-//void Engine::processInput(GLFWwindow* window)
-//{
-//    if (glfwGetKey(window, GLFW_KEY_ESCAPE) == GLFW_PRESS)
-//        glfwSetWindowShouldClose(window, true);
-//}
 
 void Engine::start() {
     Logger::getInstance() << "Start of game engine.\n";
@@ -140,6 +129,7 @@ void Engine::start() {
     e2.assign<AudioSource>(new Sound("kick-trimmed.wav", true));
 
     SceneManager::getInstance().start();
+
     // render loop
     // -----------
     while (!glfwWindowShouldClose(window))
@@ -148,12 +138,6 @@ void Engine::start() {
 
         //Swap front and back buffers
         glfwSwapBuffers(window);
-
-        /*
-        // input
-        // -----
-        processInput(window);
-        */
     }
     // glfw: terminate, clearing all previously allocated GLFW resources.
     // ------------------------------------------------------------------
