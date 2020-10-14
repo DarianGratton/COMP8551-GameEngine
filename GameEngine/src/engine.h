@@ -1,12 +1,9 @@
-#ifndef engine_h
-#define engine_h
 #pragma once
 
 #include <entityx/entityx.h>
 #include <chrono>
 #include "Systems/PhysicsSystem.h"
 #include "Systems/SoundSystem.h"
-#include "Systems/InputSystem.h"
 #include "Systems/CustomScriptSystem.h"
 #include "Systems/RenderingSystem.h"
 #include <glad/glad.h>
@@ -32,14 +29,6 @@ class Engine : public EntityX {
         void initialize();
         void update();
 
-        //write your input function in call back function 
-        void keyCallback(GLFWwindow* window, int key, int action);
-        void cursorPositionCallback(GLFWwindow* window, double xpos, double ypos);
-        void cursorEnterCallback(GLFWwindow* window, int entered);
-        void mouseButtonCallback(GLFWwindow* window, int button, int action, int mods);
-        void scrollCallback(GLFWwindow* window, double xoffset, double yoffset);
-        //void processKeyInput(GLFWwindow* window, int key, int scancode, int action, int mods);
-
 
         // settings
         
@@ -55,5 +44,3 @@ inline Engine& Engine::getInstance() {
     static Engine instance;
     return instance;
 }
-
-#endif /* engine_h */

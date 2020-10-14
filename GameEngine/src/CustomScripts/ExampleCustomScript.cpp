@@ -19,6 +19,8 @@ void ExampleCustomScript::update()
    entityx::ComponentHandle<Transform> transform = entity->component<Transform>(); 
    transform.get()->x = 2; 
    // std::cout << entity->component<Transform>().get()->x << std::endl; 
+
+   //Input::getInstance().isKeyPressed(45);
 } 
 
 EXPORT CScript* CreateCustomScriptObject(entityx::Entity* ex) 

@@ -35,6 +35,7 @@ void Scene::load() {
                     //Logger::getInstance() << object.getName();
 
                // }
+
             }
         } */
     }
