@@ -9,40 +9,35 @@
 
 #include "../CScript.h"
 #include "../Components/Components.h"
-#include <rapidxml/rapidxml.hpp>
-// #include <rapidxml/rapidxml_print.hpp>
-// #include <rapidxml/rapidxml_iterators.hpp>
-// #include <rapidxml/rapidxml_utils.hpp>
+#include "tinyxml2.h"
 
-using namespace rapidxml;
-using namespace std;
-
+// using namespace std;
+using namespace tinyxml2;
 struct CustomScript
 {
 
         CustomScript(string xmlFile) {
-            ifstream f(xmlFile);
-            if (!f.is_open()) {
-                Logger::getInstance() << "Custom script file: " + xmlFile + " failed to open!\n";
+
+            doc = new TinyXMLDocument();
+            XMLError xmlerr = doc->LoadFile(xmlFile.c_str());
+            if (xmlerr != XML_SUCCESS)
+            {
+                Logger::getInstance() << "Could not read game object XML file!\n";
+                return;
             }
-            xml = string((istreambuf_iterator<char>(f)), istreambuf_iterator<char>());
-
-            char* cstr;
-            cstr = (char*)malloc(sizeof(char) * xml.size());
-            strcpy(cstr, xml.c_str());
-            doc.parse<0>(cstr);    // 0 means default parse flags
-            // cout << doc;
-            // print()
-            // Logger::getInstance() << doc.value() << "\n";
-
-            free(cstr);
+            root = doc->FirstChildElement("root");
         }
 
-        // string getUpdate() {
-        //     // doc.first_node("update");
-        // }
+        XMLElement* getUpdate() {
+            return root->FirstChildElement("update");
+        }
+
+        ~CustomScript() {
+            delete doc;
+        }
 
 
-        xml_document<> doc; // character type defaults to char
+        TinyXMLDocument* doc;
+        XMLElement* root;
         string xml;
 };
