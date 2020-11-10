@@ -10,6 +10,7 @@
   </object>
   <object id="1" name="TreeLeft" type="Wall" x="893" y="0" width="64" height="992">
    <properties>
+    <property name="BoxCollider" value="64,992,0,0,0,0,0"/>
     <property name="ShaderComp" value="src/res/shaders/Basic.shader"/>
     <property name="TextureComp" value="src/res/textures/Tree.png"/>
    </properties>
@@ -23,12 +24,14 @@
   </object>
   <object id="3" name="TreeTop" type="Wall" x="64" y="0" width="832" height="64">
    <properties>
+    <property name="BoxCollider" value="832,64,0,0,0,0,0"/>
     <property name="ShaderComp" value="src/res/shaders/Basic.shader"/>
     <property name="TextureComp" value="src/res/textures/Tree.png"/>
    </properties>
   </object>
   <object id="4" name="TreeDown" type="Wall" x="64" y="928" width="832" height="64">
    <properties>
+    <property name="BoxCollider" value="832,64,0,0,0,0,0"/>
     <property name="ShaderComp" value="src/res/shaders/Basic.shader"/>
     <property name="TextureComp" value="src/res/textures/Tree.png"/>
    </properties>
@@ -52,6 +55,7 @@
   <object id="8" name="Enemy2" x="701" y="640" width="32" height="32">
    <properties>
     <property name="BoxCollider" value="32,32,0,0,0,0,0"/>
+    <property name="CustomScript" value="../TempleAtonement/src/scripts/BlobMonster.xml"/>
     <property name="ShaderComp" value="src/res/shaders/Basic.shader"/>
     <property name="Tag" value="Enemy"/>
     <property name="TextureComp" value="../TempleAtonement/texture/blobsprite_01.png"/>
@@ -68,6 +72,7 @@
   </object>
   <object id="16" name="Coin2" x="445" y="320" width="32" height="32">
    <properties>
+    <property name="BoxCollider" value="32,32,0,0,0,0,0"/>
     <property name="ShaderComp" value="src/res/shaders/Basic.shader"/>
     <property name="TextureComp" value="src/res/textures/Coin.png"/>
    </properties>
@@ -75,6 +80,7 @@
   </object>
   <object id="17" name="Coin3" x="477" y="512" width="32" height="32">
    <properties>
+    <property name="BoxCollider" value="32,32,0,0,0,0,0"/>
     <property name="ShaderComp" value="src/res/shaders/Basic.shader"/>
     <property name="TextureComp" value="src/res/textures/Coin.png"/>
    </properties>
@@ -82,6 +88,7 @@
   </object>
   <object id="18" name="Coin4" x="445" y="704" width="32" height="32">
    <properties>
+    <property name="BoxCollider" value="32,32,0,0,0,0,0"/>
     <property name="ShaderComp" value="src/res/shaders/Basic.shader"/>
     <property name="TextureComp" value="src/res/textures/Coin.png"/>
    </properties>
@@ -91,6 +98,7 @@
    <properties>
     <property name="BoxCollider" value="16,16,0,0,0,1,0"/>
     <property name="ShaderComp" value="src/res/shaders/Basic.shader"/>
+    <property name="Tag" value="Weapon"/>
     <property name="TextureComp" value="../TempleAtonement/texture/blobsprite_01.png"/>
    </properties>
   </object>
