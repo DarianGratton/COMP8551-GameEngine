@@ -41,8 +41,9 @@
   </object>
   <object id="7" name="Enemy1" x="221" y="288" width="32" height="32">
    <properties>
-    <property name="AudioSource" value="Footsteps_Casual_Grass.mp3, true, sound"/>
+    <property name="AudioSource" value="Footsteps_Casual_Grass.mp3, false, sound"/>
     <property name="BoxCollider" value="32,32,0,0,0,0,0"/>
+    <property name="CustomScript" value="../TempleAtonement/src/scripts/BlobMonster.xml"/>
     <property name="ShaderComp" value="src/res/shaders/Basic.shader"/>
     <property name="Tag" value="Enemy"/>
     <property name="TextureComp" value="../TempleAtonement/texture/blobsprite_01.png"/>
@@ -50,8 +51,10 @@
   </object>
   <object id="8" name="Enemy2" x="701" y="640" width="32" height="32">
    <properties>
+    <property name="BoxCollider" value="32,32,0,0,0,0,0"/>
     <property name="ShaderComp" value="src/res/shaders/Basic.shader"/>
-    <property name="TextureComp" value="src/res/textures/Enemy.png"/>
+    <property name="Tag" value="Enemy"/>
+    <property name="TextureComp" value="../TempleAtonement/texture/blobsprite_01.png"/>
    </properties>
   </object>
   <object id="13" name="Coin1" x="477" y="160" width="32" height="32">
