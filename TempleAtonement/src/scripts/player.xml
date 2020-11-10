@@ -122,6 +122,7 @@
         <int name="playerDirection" value="2"/> <!-- 0 - up, 1 - right, 2 - down, 3 - left -->
         <entity name="weaponEntity" value="weaponEntity"/>
         <int name="health" value="5"/>
+        <int name="points" value="0"/>
         <!-- <entity name="scoreEntity" value="score"/> -->
         <entity name="interactEntity" value=""/> <!-- No entity to start -->
         <double name="invinTimer" value="0.0"/>
@@ -131,6 +132,9 @@
     <interacted>
         
     </interacted>
+    <addPoints>
+        <addVar name="points" value="2" type="int"/>
+    </addPoints>
     <start>
 
     </start>
