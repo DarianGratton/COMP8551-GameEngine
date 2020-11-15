@@ -1,10 +1,12 @@
 <root>
     <update>
+
         <!--get distance between enemy and player -->
         <distanceTo name="Player" var="distance"/>
-        <ifVar name="distance" value="32" type="int">
+        <ifVar name="distance" value="32" type="float">
             <updateVar name="isFollowing" value="true" type="bool"/>
         </ifVar>
+    
       
         <!-- following -->
         <ifVar name="isFollowing" value="true" type="bool">
@@ -28,17 +30,16 @@
         
     </interacted>
     <start>
-
+        
     </start>
     <onCollision>
         <ifVar name="collisionObject-tag" value="Weapon" type="string">
             <addVar name="health" value="-1" type="int"/>
             <ifVar name="health" value="0" type="int">
                 <onEntity name="Player">
-                    <addVar name="points" value="2" type="int"/>
-                    <!--<callFuntion name="addPoints"/>-->
+                    <callFunction name="addPoints"/>
                 </onEntity>
-              <setActive value="false"/>
+                <setActive value="false"/>
             </ifVar>
         </ifVar>
     </onCollision>
