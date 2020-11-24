@@ -1,5 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
+
 <map version="1.4" tiledversion="1.4.2" orientation="orthogonal" renderorder="left-down" width="30" height="30" tilewidth="32" tileheight="32" infinite="0" nextlayerid="3" nextobjectid="44">
+
+<map version="1.4" tiledversion="1.4.2" orientation="orthogonal" renderorder="left-down" width="30" height="30" tilewidth="32" tileheight="32" infinite="0" nextlayerid="3" nextobjectid="41">
+
  <objectgroup id="2" name="Scene 1">
   <object id="23" name="Land" x="0" y="0" width="960" height="960">
    <properties>
@@ -133,6 +137,7 @@
     <property name="CustomScript" value="../TempleAtonement/src/scripts/PlayMusic1.xml"/>
    </properties>
   </object>
+
   <object id="40" name="scoreFirstDigitEntity" x="921.475" y="-62.0323" width="40" height="40">
    <properties>
     <property name="ShaderComp" value="src/res/shaders/Basic.shader"/>
@@ -159,6 +164,15 @@
     <property name="ShaderComp" value="src/res/shaders/Basic.shader"/>
     <property name="Tag" value="scoreFourthDigitEntity"/>
     <property name="TextureComp" value="../TempleAtonement/texture/Numbers/0.png"/>
+
+  <object id="39" x="416.954" y="1122.31"/>
+  <object id="40" name="lampEntity" x="233.333" y="876" width="43.3333" height="38.6667" visible="0">
+   <properties>
+    <property name="AudioSource" value="../TempleAtonement/src/sounds/tm2_swing004.ogg,0,0,fx"/>
+    <property name="BoxCollider" value="28,28,0,0,0,1,0"/>
+    <property name="ShaderComp" value="src/res/shaders/Basic.shader"/>
+    <property name="Tag" value="Lamp"/>
+    <property name="TextureComp" value="../TempleAtonement/texture/lamp.png"/>
    </properties>
   </object>
  </objectgroup>
