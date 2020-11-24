@@ -1,9 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.4" tiledversion="1.4.2" orientation="orthogonal" renderorder="left-down" width="20" height="20" tilewidth="32" tileheight="32" infinite="0" nextlayerid="3" nextobjectid="42">
+<map version="1.4" tiledversion="1.4.2" orientation="orthogonal" renderorder="left-down" width="20" height="20" tilewidth="32" tileheight="32" infinite="0" nextlayerid="3" nextobjectid="50">
  <objectgroup id="2" name="Object Layer 1">
   <object id="1" name="Land" x="0" y="0" width="640" height="640">
    <properties>
-    <property name="AudioSource" value="../TempleAtonement/src/sounds/29-Dark fantasy studio- You are fighting with me.mp3,1,1,bgm"/>
     <property name="ShaderComp" value="src/res/shaders/Basic.shader"/>
     <property name="TextureComp" value="../TempleAtonement/texture/MAP04/MAP04_FLOOR.png"/>
    </properties>
@@ -57,25 +56,25 @@
   <object id="10" name="Scene3Exit" x="288" y="608" width="96" height="32">
    <properties>
     <property name="BoxCollider" value="96,16,0,0,0,1,0"/>
-    <property name="CustomScript" value="../TempleAtonement/src/scripts/loadMap03.xml"/>
+    <property name="CustomScript" value="../TempleAtonement/src/scripts/loadMap03From04.xml"/>
    </properties>
   </object>
   <object id="13" name="Scene5Exit" x="608" y="256" width="32" height="96">
    <properties>
     <property name="BoxCollider" value="16,96,0,0,0,1,0"/>
-    <property name="CustomScript" value="../TempleAtonement/src/scripts/loadMap05.xml"/>
+    <property name="CustomScript" value="../TempleAtonement/src/scripts/loadMap05From04.xml"/>
    </properties>
   </object>
   <object id="30" name="Scene9Exit" x="0" y="256" width="32" height="96">
    <properties>
     <property name="BoxCollider" value="16,96,0,0,0,1,0"/>
-    <property name="CustomScript" value="../TempleAtonement/src/scripts/loadMap09.xml"/>
+    <property name="CustomScript" value="../TempleAtonement/src/scripts/loadMap09From04.xml"/>
    </properties>
   </object>
   <object id="29" name="Scene13Exit" x="288" y="0" width="96" height="32">
    <properties>
     <property name="BoxCollider" value="96,16,0,0,0,1,0"/>
-    <property name="CustomScript" value="../TempleAtonement/src/scripts/loadMap13.xml"/>
+    <property name="CustomScript" value="../TempleAtonement/src/scripts/loadMap13From04.xml"/>
    </properties>
   </object>
   <object id="12" name="Player" x="320" y="544" width="32" height="32">
@@ -96,6 +95,15 @@
     <property name="ShaderComp" value="src/res/shaders/Basic.shader"/>
     <property name="Tag" value="Weapon"/>
     <property name="TextureComp" value="../TempleAtonement/texture/slash.png"/>
+   </properties>
+  </object>
+  <object id="46" name="lampEntity" x="326.409" y="549.231" width="43.2231" height="43.9683" visible="0">
+   <properties>
+    <property name="AudioSource" value="../TempleAtonement/src/sounds/tm2_swing004.ogg,0,0,fx"/>
+    <property name="BoxCollider" value="28,28,0,0,0,1,0"/>
+    <property name="ShaderComp" value="src/res/shaders/Basic.shader"/>
+    <property name="Tag" value="Lamp"/>
+    <property name="TextureComp" value="../TempleAtonement/texture/lamp.png"/>
    </properties>
   </object>
   <object id="27" name="Monster1" x="224" y="128" width="24" height="32">
@@ -121,28 +129,36 @@
   <object id="34" name="torch1" type="interacable" x="448" y="384" width="64" height="62">
    <properties>
     <property name="BoxCollider" value="32,60,0,-10,0,0,0"/>
+    <property name="CustomScript" value="../TempleAtonement/src/scripts/Torches.xml"/>
     <property name="ShaderComp" value="src/res/shaders/Basic.shader"/>
+    <property name="Tag" value="torch2"/>
     <property name="TextureComp" value="../TempleAtonement/texture/torch_unlit.png"/>
    </properties>
   </object>
   <object id="33" name="torch2" type="interacable" x="128" y="384" width="64" height="64">
    <properties>
     <property name="BoxCollider" value="32,60,0,-10,0,0,0"/>
+    <property name="CustomScript" value="../TempleAtonement/src/scripts/Torches.xml"/>
     <property name="ShaderComp" value="src/res/shaders/Basic.shader"/>
+    <property name="Tag" value="torch2"/>
     <property name="TextureComp" value="../TempleAtonement/texture/torch_unlit.png"/>
    </properties>
   </object>
   <object id="32" name="torch3" type="interacable" x="448" y="160" width="64" height="62">
    <properties>
     <property name="BoxCollider" value="32,60,0,-10,0,0,0"/>
+    <property name="CustomScript" value="../TempleAtonement/src/scripts/Torches.xml"/>
     <property name="ShaderComp" value="src/res/shaders/Basic.shader"/>
+    <property name="Tag" value="torch2"/>
     <property name="TextureComp" value="../TempleAtonement/texture/torch_unlit.png"/>
    </properties>
   </object>
   <object id="31" name="torch4" type="interacable" x="128" y="160" width="64" height="64">
    <properties>
     <property name="BoxCollider" value="32,60,0,-10,0,0,0"/>
+    <property name="CustomScript" value="../TempleAtonement/src/scripts/Torches.xml"/>
     <property name="ShaderComp" value="src/res/shaders/Basic.shader"/>
+    <property name="Tag" value="torch2"/>
     <property name="TextureComp" value="../TempleAtonement/texture/torch_unlit.png"/>
    </properties>
   </object>
@@ -198,6 +214,64 @@
     <property name="ShaderComp" value="src/res/shaders/Basic.shader"/>
     <property name="Tag" value="Coin"/>
     <property name="TextureComp" value="../TempleAtonement/texture/coin.png"/>
+   </properties>
+  </object>
+  <object id="27" name="MusicManager" x="119" y="343">
+   <properties>
+    <property name="AudioSource" value="../TempleAtonement/src/sounds/29-Dark fantasy studio- You are fighting with me.mp3,1,1,bgm"/>
+    <property name="CustomScript" value="../TempleAtonement/src/scripts/MusicManager.xml"/>
+    <property name="Persistent" value=""/>
+   </properties>
+  </object>
+  <object id="39" name="MusicTrigger" x="493.692" y="15.4279">
+   <properties>
+    <property name="CustomScript" value="../TempleAtonement/src/scripts/PlayMusic2.xml"/>
+   </properties>
+  </object>
+  <object id="42" name="scoreFirstDigitEntity" x="599.755" y="-58.3075" width="40" height="40">
+   <properties>
+    <property name="ShaderComp" value="src/res/shaders/Basic.shader"/>
+    <property name="Tag" value="scoreFirstDigitEntity"/>
+    <property name="TextureComp" value="../TempleAtonement/texture/Numbers/0.png"/>
+   </properties>
+  </object>
+  <object id="43" name="scoreSecondDigitEntity" x="559.474" y="-58.3075" width="40" height="40">
+   <properties>
+    <property name="ShaderComp" value="src/res/shaders/Basic.shader"/>
+    <property name="Tag" value="scoreSecondDigitEntity"/>
+    <property name="TextureComp" value="../TempleAtonement/texture/Numbers/0.png"/>
+   </properties>
+  </object>
+  <object id="44" name="scoreThirdDigitEntity" x="519.317" y="-58.3075" width="40" height="40">
+   <properties>
+    <property name="ShaderComp" value="src/res/shaders/Basic.shader"/>
+    <property name="Tag" value="scoreThirdDigitEntity"/>
+    <property name="TextureComp" value="../TempleAtonement/texture/Numbers/0.png"/>
+   </properties>
+  </object>
+  <object id="45" name="scoreFourthDigitEntity" x="480.41" y="-58.3075" width="40" height="40">
+   <properties>
+    <property name="ShaderComp" value="src/res/shaders/Basic.shader"/>
+    <property name="Tag" value="scoreFourthDigitEntity"/>
+    <property name="TextureComp" value="../TempleAtonement/texture/Numbers/0.png"/>
+   </properties>
+  </object>
+  <object id="47" name="doorblock" type="wall" x="0" y="256" width="64" height="96" visible="0">
+   <properties>
+    <property name="BoxCollider" value="32,60,0,-10,0,0,0"/>
+    <property name="CustomScript" value="../TempleAtonement/src/scripts/DoorBlock.xml"/>
+    <property name="ShaderComp" value="src/res/shaders/Basic.shader"/>
+    <property name="Tag" value="Block"/>
+    <property name="TextureComp" value="../TempleAtonement/texture/door_block.png"/>
+   </properties>
+  </object>
+  <object id="48" name="chest" x="288" y="256" width="64" height="64">
+   <properties>
+    <property name="BoxCollider" value="64,64,0,-10,0,0,0"/>
+    <property name="CustomScript" value="../TempleAtonement/src/scripts/LampChest.xml"/>
+    <property name="ShaderComp" value="src/res/shaders/Basic.shader"/>
+    <property name="Tag" value="Chest"/>
+    <property name="TextureComp" value="../TempleAtonement/texture/chest_closed.png"/>
    </properties>
   </object>
  </objectgroup>

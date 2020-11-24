@@ -141,8 +141,9 @@
   </object>
   <object id="27" name="enemyBlod1" type="enemyblod" x="385.333" y="316" width="24" height="32">
    <properties>
+    <property name="AudioSource" value="../TempleAtonement/src/sounds/PP_Monster_Alert_1_1.wav,0,0, fx"/>
     <property name="BoxCollider" value="24,32,0,0,0,0,0"/>
-    <property name="CustomScript" value="../TempleAtonement/src/scripts/archer.xml"/>
+    <property name="CustomScript" value="../TempleAtonement/src/scripts/BlobMonster.xml"/>
     <property name="ShaderComp" value="src/res/shaders/Basic.shader"/>
     <property name="Tag" value="Enemy"/>
     <property name="TextureComp" value="../TempleAtonement/texture/monster_down.png"/>
@@ -150,7 +151,9 @@
   </object>
   <object id="28" name="enemyBlod2" type="enemyblod" x="864" y="480" width="24" height="32">
    <properties>
+    <property name="AudioSource" value="../TempleAtonement/src/sounds/PP_Monster_Alert_1_1.wav,0,0, fx"/>
     <property name="BoxCollider" value="24,32,0,0,0,0,0"/>
+    <property name="CustomScript" value="../TempleAtonement/src/scripts/BlobMonster.xml"/>
     <property name="ShaderComp" value="src/res/shaders/Basic.shader"/>
     <property name="Tag" value="Enemy"/>
     <property name="TextureComp" value="../TempleAtonement/texture/monster_down.png"/>
@@ -158,7 +161,9 @@
   </object>
   <object id="29" name="enemyBlodd3" type="enemyblod" x="704" y="896" width="24" height="32">
    <properties>
+    <property name="AudioSource" value="../TempleAtonement/src/sounds/PP_Monster_Alert_1_1.wav,0,0, fx"/>
     <property name="BoxCollider" value="24,32,0,0,0,0,0"/>
+    <property name="CustomScript" value="../TempleAtonement/src/scripts/BlobMonster.xml"/>
     <property name="ShaderComp" value="src/res/shaders/Basic.shader"/>
     <property name="Tag" value="Enemy"/>
     <property name="TextureComp" value="../TempleAtonement/texture/monster_down.png"/>
@@ -191,6 +196,12 @@
     <property name="ShaderComp" value="src/res/shaders/Basic.shader"/>
     <property name="Tag" value="lock"/>
     <property name="TextureComp" value="../TempleAtonement/texture/door_block.png"/>
+  <object id="42" name="lampEntity" x="1115.99" y="136.616" width="40.6667" height="41.3333" visible="0">
+   <properties>
+    <property name="AudioSource" value="../TempleAtonement/src/sounds/tm2_swing004.ogg,0,0,fx"/>
+    <property name="BoxCollider" value="28,28,0,0,0,1,0"/>
+    <property name="ShaderComp" value="src/res/shaders/Basic.shader"/>
+    <property name="TextureComp" value="../TempleAtonement/texture/lamp.png"/>
    </properties>
   </object>
  </objectgroup>

@@ -13,7 +13,63 @@
             </ifVarGreater>
         </ifVar>
 
-        <!-- attack -->
+      <!-- If attacking, add to a timer and not allow new input -->
+      <ifVar name="isLighting" value="true" type="bool">
+        <addVar name="attackTimer" value="deltaTime" type="double"/>
+        <ifVarGreater name="attackTimer" value="0.15" type="double">
+          <updateVar name="attackTimer" value="0.0" type="double"/>
+          <updateVar name="isLighting" value="false" type="bool" />
+          <onEntity name="lampEntity">
+            <setActive value="false"/>
+          </onEntity>
+        </ifVarGreater>
+      </ifVar>
+
+
+      <!-- lamp -->
+      <ifGlobalVar name="obtainedLamp" value="true" type="bool">
+      <ifVar name="isLighting" value="false" type="bool">
+        <keyPress value="KEY_F">
+          <updateVar name="isLighting" value="true" type="bool"/>
+          <onEntity name="lampEntity">
+            <setActive value="true"/>
+            <playAudio/>
+          </onEntity>
+          <!-- Check player direction to move weaponEntity -->
+          <matchEntityPos name="lampEntity"/>
+          <ifVar name="playerDirection" value="0" type="int">
+            <!-- Up -->
+            <onEntity name="lampEntity">
+              <moveEntity x="0.0" y="24.0" z="0.0" applyDt="false"/>
+              <changeSprite name="../TempleAtonement/texture/lamp.png"/>
+            </onEntity>
+          </ifVar>
+          <ifVar name="playerDirection" value="1" type="int">
+            <!-- Right -->
+            <onEntity name="lampEntity">
+              <moveEntity x="24.0" y="0.0" z="0.0" applyDt="false"/>
+              <changeSprite name="../TempleAtonement/texture/lamp.png"/>
+            </onEntity>
+          </ifVar>
+          <ifVar name="playerDirection" value="2" type="int">
+            <!-- Down -->
+            <onEntity name="lampEntity">
+              <moveEntity x="0.0" y="-24.0" z="0.0" applyDt="false"/>
+              <changeSprite name="../TempleAtonement/texture/lamp.png"/>
+            </onEntity>
+          </ifVar>
+          <ifVar name="playerDirection" value="3" type="int">
+            <!-- Left -->
+            <onEntity name="lampEntity">
+              <moveEntity x="-24.0" y="0.0" z="0.0" applyDt="false"/>
+              <changeSprite name="../TempleAtonement/texture/lamp.png"/>
+            </onEntity>
+          </ifVar>
+        </keyPress>
+      </ifVar>
+    </ifGlobalVar>
+
+      <!-- attack -->
         <ifVar name="isAttacking" value="false" type="bool">
             <keyPress value="KEY_SPACE">
                 <updateVar name="isAttacking" value="true" type="bool"/>
@@ -56,9 +112,25 @@
 
         <!-- For audio check -->
         <updateVar name="checkMove" type="bool" value="false"/>
-
+        <matchEntityPos name="scoreFirstDigitEntity"/>
+        <onEntity name="scoreFirstDigitEntity">
+            <moveEntity x="-320" y="220.0" z="0.0" applyDt="false"/>
+        </onEntity>
+        <matchEntityPos name="scoreSecondDigitEntity"/>
+        <onEntity name="scoreSecondDigitEntity">
+            <moveEntity x="-350" y="220.0" z="0.0" applyDt="false"/>
+        </onEntity>
+        <matchEntityPos name="scoreThirdDigitEntity"/>
+        <onEntity name="scoreThirdDigitEntity">
+            <moveEntity x="-380" y="220.0" z="0.0" applyDt="false"/>
+        </onEntity>
+        <matchEntityPos name="scoreFourthDigitEntity"/>
+        <onEntity name="scoreFourthDigitEntity">
+            <moveEntity x="-410" y="220.0" z="0.0" applyDt="false"/>
+        </onEntity>
         <!-- movement -->
         <ifVar name="isAttacking" value="false" type="bool">
+          <ifVar name="isLighting" value="false" type="bool">
             <keyPress value="KEY_W">
                 <changeSprite name="../TempleAtonement/texture/player_up.png"/>
                 <moveEntity x="0.0" y="12.0" z="0.0" applyDt="true"/>
@@ -100,6 +172,7 @@
                 </ifVar>
             </keyPress>
         </ifVar>
+       </ifVar>
 
         <ifVar name="checkMove" type="bool" value="false">
             <updateVar name="isMoving" type="bool" value="false"/>
@@ -146,22 +219,30 @@
             </ifVar>
         </ifVar>
     </update>
-
+    
     <variables>
         <bool name="isAttacking" value="false"/>
+		<bool name="isLighting" value="false"/>
         <double name="attackTimer" value="0.0"/>
         <int name="playerDirection" value="2"/> <!-- 0 - up, 1 - right, 2 - down, 3 - left -->
         <entity name="weaponEntity" value="weaponEntity"/>
-        <int name="health" value="5"/>
+		<entity name="lampEntity" value="lampEntity"/>
+        <globalInt name="health" value="5"/>
+		<globalBool name="obtainedLamp" value="false"/>
         <!-- <entity name="scoreEntity" value="score"/> -->
         <entity name="interactEntity" value=""/> <!-- No entity to start -->
         <double name="invinTimer" value="0.0"/>
         <bool name="isInvincible" value="false"/>
         <bool name="blink" value="false"/>
-        <int name="points" value="0"/>
+        <globalInt name="points" value="0"/>
         <entity name="tempEntity" value=""/>
         <bool name="isMoving" value="false"/>
         <bool name="checkMove" value="false"/>
+        
+        <globalFloat name="newPlayerX" value="160"/>
+        <globalFloat name="newPlayerY" value="864"/>
+        <float name="localNewPlayerX" value="160"/>
+        <float name="localNewPlayerY" value="864"/>
 
         <entity name="scoreFirstDigitEntity" value="scoreFirstDigitEntity"/>
         <entity name="scoreSecondDigitEntity" value="scoreSecondDigitEntity"/>
@@ -175,19 +256,21 @@
     </variables>
 
     <addPoints>
-        <addVar name="points" value="1" type="int"/>
-        <setEqual name="scoreFirstDigit" type="int" value="points" isGlobal="false"/>
+        <addGlobalVar name="points" value="1" type="int"/>
+    </addPoints>
+    <updatePointDisplay>
+        <setEqual name="scoreFirstDigit" type="int" value="points" isGlobal="true"/>
         <modVar name="scoreFirstDigit" type="int" value="10"/>
 
-        <setEqual name="scoreSecondDigit" type="int" value="points" isGlobal="false"/>
+        <setEqual name="scoreSecondDigit" type="int" value="points" isGlobal="true"/>
         <divideVar name="scoreSecondDigit" type="int" value="10"/>
         <modVar name="scoreSecondDigit" type="int" value="10"/>
 
-        <setEqual name="scoreThirdDigit" type="int" value="points" isGlobal="false"/>
+        <setEqual name="scoreThirdDigit" type="int" value="points" isGlobal="true"/>
         <divideVar name="scoreThirdDigit" type="int" value="100"/>
         <modVar name="scoreThirdDigit" type="int" value="10"/>
 
-        <setEqual name="scoreFourthDigit" type="int" value="points" isGlobal="false"/>
+        <setEqual name="scoreFourthDigit" type="int" value="points" isGlobal="true"/>
         <divideVar name="scoreFourthDigit" type="int" value="1000"/>
         <modVar name="scoreFourthDigit" type="int" value="10"/>
 
@@ -322,18 +405,26 @@
                 <changeSprite name="../TempleAtonement/texture/Numbers/9.png"/>
             </ifVar>
         </onEntity>
-    </addPoints>
-    <start>
 
+    </updatePointDisplay>
+    <updatePos>
+        <setEqual name="localNewPlayerX" type="float" value="newPlayerX" isGlobal="true"/>
+        <setEqual name="localNewPlayerY" type="float" value="newPlayerY" isGlobal="true"/>
+        <multiVar name="localNewPlayerY" type="float" value="-1"/>
+        <setPos x="localNewPlayerX" y="localNewPlayerY"/>
+    </updatePos>
+    <start>
+        <callFunction name="updatePointDisplay"/>
+        <callFunction name="updatePos"/>
     </start>
     <onCollision>
         <ifVar name="collisionObject-tag" value="Enemy" type="string">
             <ifVar name="isInvincible" type="bool" value="false">
-                <addVar name="health" value="-1" type="int"/>
-                <ifVar name="health" value="0" type="int">
+                <addGlobalVar name="health" value="-1" type="int"/>
+                <ifGlobalVar name="health" value="0" type="int">
                     <log value="Health is at 0!"/>
                     <loadScene name="gameoverScene"/>
-                </ifVar>
+                </ifGlobalVar>
                 <updateVar name="isInvincible" value="true" type="bool"/>
             </ifVar>
         </ifVar>
@@ -348,6 +439,7 @@
             <callFunction name="addPoints"/>
             <callFunction name="addPoints"/>
             <callFunction name="addPoints"/>
+            <callFunction name="updatePointDisplay"/>
         </ifVar>
         <ifVar name="collisionObject-tag" value="Interactable" type="string">
             <updateVar name="interactEntity" value="collisionObject-name" type="entity"/>

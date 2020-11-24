@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.4" tiledversion="2020.10.28" orientation="orthogonal" renderorder="right-down" width="12" height="10" tilewidth="48" tileheight="48" infinite="0" nextlayerid="3" nextobjectid="257">
+<map version="1.4" tiledversion="1.4.2" orientation="orthogonal" renderorder="right-down" width="12" height="10" tilewidth="48" tileheight="48" infinite="0" nextlayerid="3" nextobjectid="262">
  <tileset firstgid="1" source="Dungeon.tsx"/>
  <tileset firstgid="1" source="blobsprite_01.tsx"/>
  <objectgroup id="2" name="Scene 13">
@@ -77,12 +77,55 @@
   <object id="254" name="Scene4Exit" x="168.812" y="432" width="216" height="48">
    <properties>
     <property name="BoxCollider" value="216,48,0,0,0,1,0"/>
-    <property name="CustomScript" value="../TempleAtonement/src/scripts/loadMap04.xml"/>
+    <property name="CustomScript" value="../TempleAtonement/src/scripts/loadMap04From13.xml"/>
    </properties>
   </object>
-  <object id="255" name="Music" x="480" y="96">
+  <object id="27" name="MusicManager" x="119" y="343">
    <properties>
     <property name="AudioSource" value="../TempleAtonement/src/sounds/29-Dark fantasy studio- You are fighting with me.mp3,1,1,bgm"/>
+    <property name="CustomScript" value="../TempleAtonement/src/scripts/MusicManager.xml"/>
+    <property name="Persistent" value=""/>
+   </properties>
+  </object>
+  <object id="39" name="MusicTrigger" x="493.692" y="15.4279">
+   <properties>
+    <property name="CustomScript" value="../TempleAtonement/src/scripts/PlayMusic3.xml"/>
+   </properties>
+  </object>
+  <object id="257" name="scoreFirstDigitEntity" x="536.019" y="-47.7399" width="40" height="40">
+   <properties>
+    <property name="ShaderComp" value="src/res/shaders/Basic.shader"/>
+    <property name="Tag" value="scoreFirstDigitEntity"/>
+    <property name="TextureComp" value="../TempleAtonement/texture/Numbers/0.png"/>
+   </properties>
+  </object>
+  <object id="258" name="scoreSecondDigitEntity" x="495.738" y="-47.7399" width="40" height="40">
+   <properties>
+    <property name="ShaderComp" value="src/res/shaders/Basic.shader"/>
+    <property name="Tag" value="scoreSecondDigitEntity"/>
+    <property name="TextureComp" value="../TempleAtonement/texture/Numbers/0.png"/>
+   </properties>
+  </object>
+  <object id="259" name="scoreThirdDigitEntity" x="455.581" y="-47.7399" width="40" height="40">
+   <properties>
+    <property name="ShaderComp" value="src/res/shaders/Basic.shader"/>
+    <property name="Tag" value="scoreThirdDigitEntity"/>
+    <property name="TextureComp" value="../TempleAtonement/texture/Numbers/0.png"/>
+   </properties>
+  </object>
+  <object id="260" name="scoreFourthDigitEntity" x="416.674" y="-47.7399" width="40" height="40">
+   <properties>
+    <property name="ShaderComp" value="src/res/shaders/Basic.shader"/>
+    <property name="Tag" value="scoreFourthDigitEntity"/>
+    <property name="TextureComp" value="../TempleAtonement/texture/Numbers/0.png"/>
+   </properties>
+  </object>
+  <object id="261" name="lampEntity" x="276.88" y="400.252" width="40.6667" height="41.3333" visible="0">
+   <properties>
+    <property name="AudioSource" value="../TempleAtonement/src/sounds/tm2_swing004.ogg,0,0,fx"/>
+    <property name="BoxCollider" value="28,28,0,0,0,1,0"/>
+    <property name="ShaderComp" value="src/res/shaders/Basic.shader"/>
+    <property name="TextureComp" value="../TempleAtonement/texture/lamp.png"/>
    </properties>
   </object>
  </objectgroup>

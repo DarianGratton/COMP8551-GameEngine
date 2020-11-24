@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.4" tiledversion="1.4.2" orientation="orthogonal" renderorder="left-up" width="20" height="20" tilewidth="32" tileheight="32" infinite="0" nextlayerid="5" nextobjectid="32">
+<map version="1.4" tiledversion="1.4.2" orientation="orthogonal" renderorder="left-up" width="20" height="20" tilewidth="32" tileheight="32" infinite="0" nextlayerid="5" nextobjectid="37">
  <tileset firstgid="1" source="../../../../fsm_extra02_A2.tsx"/>
  <tileset firstgid="1" source="../../../../fsm_extra02_A4.tsx"/>
  <objectgroup id="2" name="objects">
@@ -53,21 +53,27 @@
   </object>
   <object id="12" name="torch2" type="interacable" x="192" y="96" width="64" height="64">
    <properties>
-    <property name="BoxCollider" value="64,64,0,0,0,0,0"/>
+    <property name="BoxCollider" value="64,64,0,-10,0,0,0"/>
+    <property name="CustomScript" value="../TempleAtonement/src/scripts/Torches.xml"/>
     <property name="ShaderComp" value="src/res/shaders/Basic.shader"/>
+    <property name="Tag" value="torch2"/>
     <property name="TextureComp" value="../TempleAtonement/texture/torch_unlit.png"/>
    </properties>
   </object>
   <object id="13" name="torch1" type="interacable" x="416" y="96" width="64" height="62">
    <properties>
-    <property name="BoxCollider" value="64,64,0,0,0,0,0"/>
+    <property name="BoxCollider" value="64,62,0,-10,0,0,0"/>
+    <property name="CustomScript" value="../TempleAtonement/src/scripts/Torches.xml"/>
     <property name="ShaderComp" value="src/res/shaders/Basic.shader"/>
+    <property name="Tag" value="torch2"/>
     <property name="TextureComp" value="../TempleAtonement/texture/torch_unlit.png"/>
    </properties>
   </object>
   <object id="14" name="Enemy" x="288" y="320" width="34" height="34">
    <properties>
+    <property name="AudioSource" value="../TempleAtonement/src/sounds/PP_Monster_Alert_1_1.wav,0,0, fx"/>
     <property name="BoxCollider" value="64,64,0,0,0,0,0"/>
+    <property name="CustomScript" value="../TempleAtonement/src/scripts/BlobMonster.xml"/>
     <property name="ShaderComp" value="src/res/shaders/Basic.shader"/>
     <property name="Tag" value="Enemy"/>
     <property name="TextureComp" value="../TempleAtonement/texture/monster_down.png"/>
@@ -162,10 +168,16 @@
     <property name="TextureComp" value="../TempleAtonement/texture/slash.png"/>
    </properties>
   </object>
-  <object id="24" name="Music" x="-126" y="-47" width="43" height="44">
+  <object id="27" name="MusicManager" x="119" y="343">
    <properties>
     <property name="AudioSource" value="../TempleAtonement/src/sounds/29-Dark fantasy studio- You are fighting with me.mp3,1,1,bgm"/>
+    <property name="CustomScript" value="../TempleAtonement/src/scripts/MusicManager.xml"/>
     <property name="Persistent" value=""/>
+   </properties>
+  </object>
+  <object id="39" name="MusicTrigger" x="493.692" y="15.4279">
+   <properties>
+    <property name="CustomScript" value="../TempleAtonement/src/scripts/PlayMusic2.xml"/>
    </properties>
   </object>
   <object id="26" name="main_wall" x="0" y="0" width="640" height="640">
@@ -177,19 +189,55 @@
   <object id="27" name="Scene4Exit" x="0" y="256" width="32" height="96">
    <properties>
     <property name="BoxCollider" value="32,96,0,0,0,1,0"/>
-    <property name="CustomScript" value="../TempleAtonement/src/scripts/loadMap04.xml"/>
+    <property name="CustomScript" value="../TempleAtonement/src/scripts/loadMap04From05.xml"/>
    </properties>
   </object>
   <object id="28" name="Scene6Exit" x="288" y="0" width="96" height="32">
    <properties>
     <property name="BoxCollider" value="96,32,0,0,0,1,0"/>
-    <property name="CustomScript" value="../TempleAtonement/src/scripts/loadMap06.xml"/>
+    <property name="CustomScript" value="../TempleAtonement/src/scripts/loadMap06From05.xml"/>
    </properties>
   </object>
   <object id="29" name="Scene7Exit" x="288" y="608" width="96" height="32">
    <properties>
     <property name="BoxCollider" value="96,32,0,0,0,1,0"/>
-    <property name="CustomScript" value="../TempleAtonement/src/scripts/loadMap07.xml"/>
+    <property name="CustomScript" value="../TempleAtonement/src/scripts/loadMap07From05.xml"/>
+   </properties>
+  </object>
+  <object id="32" name="scoreFirstDigitEntity" x="600.416" y="-63.5913" width="40" height="40">
+   <properties>
+    <property name="ShaderComp" value="src/res/shaders/Basic.shader"/>
+    <property name="Tag" value="scoreFirstDigitEntity"/>
+    <property name="TextureComp" value="../TempleAtonement/texture/Numbers/0.png"/>
+   </properties>
+  </object>
+  <object id="33" name="scoreSecondDigitEntity" x="560.135" y="-63.5913" width="40" height="40">
+   <properties>
+    <property name="ShaderComp" value="src/res/shaders/Basic.shader"/>
+    <property name="Tag" value="scoreSecondDigitEntity"/>
+    <property name="TextureComp" value="../TempleAtonement/texture/Numbers/0.png"/>
+   </properties>
+  </object>
+  <object id="34" name="scoreThirdDigitEntity" x="519.978" y="-63.5913" width="40" height="40">
+   <properties>
+    <property name="ShaderComp" value="src/res/shaders/Basic.shader"/>
+    <property name="Tag" value="scoreThirdDigitEntity"/>
+    <property name="TextureComp" value="../TempleAtonement/texture/Numbers/0.png"/>
+   </properties>
+  </object>
+  <object id="35" name="scoreFourthDigitEntity" x="481.071" y="-63.5913" width="40" height="40">
+   <properties>
+    <property name="ShaderComp" value="src/res/shaders/Basic.shader"/>
+    <property name="Tag" value="scoreFourthDigitEntity"/>
+    <property name="TextureComp" value="../TempleAtonement/texture/Numbers/0.png"/>
+   </properties>
+  </object>
+  <object id="36" name="lampEntity" x="100.667" y="281.333" width="40.6667" height="41.3333" visible="0">
+   <properties>
+    <property name="AudioSource" value="../TempleAtonement/src/sounds/tm2_swing004.ogg,0,0,fx"/>
+    <property name="BoxCollider" value="28,28,0,0,0,1,0"/>
+    <property name="ShaderComp" value="src/res/shaders/Basic.shader"/>
+    <property name="TextureComp" value="../TempleAtonement/texture/lamp.png"/>
    </properties>
   </object>
  </objectgroup>
