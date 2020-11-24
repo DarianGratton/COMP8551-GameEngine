@@ -113,7 +113,22 @@
 
         <!-- For audio check -->
         <updateVar name="checkMove" type="bool" value="false"/>
-
+        <matchEntityPos name="scoreFirstDigitEntity"/>
+        <onEntity name="scoreFirstDigitEntity">
+            <moveEntity x="-320" y="220.0" z="0.0" applyDt="false"/>
+        </onEntity>
+        <matchEntityPos name="scoreSecondDigitEntity"/>
+        <onEntity name="scoreSecondDigitEntity">
+            <moveEntity x="-350" y="220.0" z="0.0" applyDt="false"/>
+        </onEntity>
+        <matchEntityPos name="scoreThirdDigitEntity"/>
+        <onEntity name="scoreThirdDigitEntity">
+            <moveEntity x="-380" y="220.0" z="0.0" applyDt="false"/>
+        </onEntity>
+        <matchEntityPos name="scoreFourthDigitEntity"/>
+        <onEntity name="scoreFourthDigitEntity">
+            <moveEntity x="-410" y="220.0" z="0.0" applyDt="false"/>
+        </onEntity>
         <!-- movement -->
         <ifVar name="isAttacking" value="false" type="bool">
           <ifVar name="isLighting" value="false" type="bool">
@@ -205,7 +220,7 @@
             </ifVar>
         </ifVar>
     </update>
-
+    
     <variables>
         <bool name="isAttacking" value="false"/>
       <bool name="isLighting" value="false"/>
