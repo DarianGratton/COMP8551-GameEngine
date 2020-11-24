@@ -1,0 +1,23 @@
+<root>
+
+    <update>
+		<ifGlobalVar name="numOrbsFlipped" value="4" type="globalInt">
+			<updateGlobalVar name="doorOpened" value="true" type="globalBool" />
+		</ifGlobalVar>
+    </update>
+    
+	<variables>
+		<globalInt name="numOrbsFlipped" value="0" />
+		<globalBool name="doorOpened" value="false" />
+    </variables>
+
+    <interacted>
+        
+    </interacted>
+
+    <start>
+		<!-- reset puzzle progress on entering room -->
+		<updateGlobalVar name="numOrbsFlipped" value="0" type="globalInt" />
+    </start>
+	
+</root>
