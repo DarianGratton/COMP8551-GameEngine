@@ -19,9 +19,12 @@
 	
     <onCollision>
         <ifVar name="collisionObject-tag" value="Weapon" type="string">
-			<log value="Player hit a switch." />
-			<changeSprite name="../TempleAtonement/texture/orb_on.png"/>
-            <updateVar name="activatedSwitch" value="true" type="bool" />
+			<ifVar name="activatedSwitch" value="false" type="bool">
+				<log value="Player turned a switch on." />
+				<changeSprite name="../TempleAtonement/texture/orb_on.png"/>
+				<addGlobalVar name="numOrbsFlipped" value="1" type="globalInt" />
+				<updateVar name="activatedSwitch" value="true" type="bool" />
+			</ifVar>
         </ifVar>
     </onCollision>
 </root>
