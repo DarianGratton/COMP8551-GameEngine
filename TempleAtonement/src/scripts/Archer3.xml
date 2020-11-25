@@ -1,0 +1,42 @@
+<root>
+  <update>
+    <ifVar name="isAttacking" value="true" type="bool">
+      <addVar name="attackTimer" value="deltaTime" type="double"/>
+        <ifVarGreater name="attackTimer" value ="1.0" type="double">
+          <updateVar name="attackTimer" value ="0.0" type="double"/>
+          <updateVar name="isAttacking" value="false" type="bool"/>
+
+    
+          <onEntity name="arrowThreeEntity">
+            <setActive value="false"/>
+          </onEntity>
+        </ifVarGreater>       
+    </ifVar>
+  </update>
+  <start>
+
+  
+    <onEntity name="arrowThreeEntity">
+      <setActive value="false"/>
+    </onEntity>
+  </start>
+  
+  <variables>
+    <bool name="isAttacking" value="false"/>
+    <double name="attackTimer" value="0.0"/>
+    
+    <entity name="arrowThreeEntity" value="arrowThreeEntity"/>       
+  </variables>
+
+  <onCollision>
+    <ifVar name="collisionObject-tag" value="Player" type="string">
+      <ifVar name="isAttacking" value="false" type="bool">
+        <updateVar name="isAttacking" value="true" type="bool"/>
+
+        <onEntity name="arrowThreeEntity">
+          <setActive value="true"/>
+        </onEntity>
+      </ifVar>
+    </ifVar>
+  </onCollision>
+</root>

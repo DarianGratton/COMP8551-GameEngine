@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.4" tiledversion="1.4.2" orientation="orthogonal" renderorder="left-up" width="30" height="30" tilewidth="32" tileheight="32" infinite="0" nextlayerid="4" nextobjectid="43">
+<map version="1.4" tiledversion="1.4.2" orientation="orthogonal" renderorder="left-up" width="30" height="30" tilewidth="32" tileheight="32" infinite="0" nextlayerid="4" nextobjectid="51">
  <tileset firstgid="1" source="../../../../fsm_extra02_A2.tsx"/>
  <tileset firstgid="1" source="../../../../fsm_extra02_A4.tsx"/>
  <objectgroup id="2" name="Object Layer 1">
@@ -24,61 +24,85 @@
   <object id="1" name="Wall12" type="wall" x="0" y="0" width="64" height="960">
    <properties>
     <property name="BoxCollider" value="64,960,0,0,0,0,0"/>
+    <property name="ShaderComp" value="src/res/shaders/Basic.shader"/>
+    <property name="Tag" value="Wall"/>
    </properties>
   </object>
   <object id="2" name="Wall11" type="wall" x="64" y="896" width="896" height="64">
    <properties>
     <property name="BoxCollider" value="896,64,0,0,0,0,0"/>
+    <property name="ShaderComp" value="src/res/shaders/Basic.shader"/>
+    <property name="Tag" value="Wall"/>
    </properties>
   </object>
   <object id="3" name="Wall10" type="wall" x="64" y="0" width="448" height="64">
    <properties>
     <property name="BoxCollider" value="448,64,0,0,0,0,0"/>
+    <property name="ShaderComp" value="src/res/shaders/Basic.shader"/>
+    <property name="Tag" value="Wall"/>
    </properties>
   </object>
   <object id="4" name="Wall9" type="wall" x="608" y="0" width="352" height="64">
    <properties>
     <property name="BoxCollider" value="352,64,0,0,0,0,0"/>
+    <property name="ShaderComp" value="src/res/shaders/Basic.shader"/>
+    <property name="Tag" value="Wall"/>
    </properties>
   </object>
   <object id="5" name="Wall8" type="wall" x="896" y="64" width="64" height="288">
    <properties>
     <property name="BoxCollider" value="64,288,0,0,0,0,0"/>
+    <property name="ShaderComp" value="src/res/shaders/Basic.shader"/>
+    <property name="Tag" value="Wall"/>
    </properties>
   </object>
   <object id="6" name="Wall7" type="wall" x="896" y="480" width="64" height="416">
    <properties>
     <property name="BoxCollider" value="64,416,0,0,0,0,0"/>
+    <property name="ShaderComp" value="src/res/shaders/Basic.shader"/>
+    <property name="Tag" value="Wall"/>
    </properties>
   </object>
   <object id="11" name="Wall6" type="wall" x="128" y="160" width="768" height="64">
    <properties>
     <property name="BoxCollider" value="768,64,0,0,0,0,0"/>
+    <property name="ShaderComp" value="src/res/shaders/Basic.shader"/>
+    <property name="Tag" value="Wall"/>
    </properties>
   </object>
   <object id="12" name="Wall5" type="wall" x="128" y="224" width="64" height="544">
    <properties>
     <property name="BoxCollider" value="64,544,0,0,0,0,0"/>
+    <property name="ShaderComp" value="src/res/shaders/Basic.shader"/>
+    <property name="Tag" value="Wall"/>
    </properties>
   </object>
   <object id="14" name="Wall4" type="wall" x="256" y="352" width="64" height="544">
    <properties>
     <property name="BoxCollider" value="64,544,0,0,0,0,0"/>
+    <property name="ShaderComp" value="src/res/shaders/Basic.shader"/>
+    <property name="Tag" value="Wall"/>
    </properties>
   </object>
   <object id="16" name="Wall3" type="wall" x="384" y="224" width="64" height="544">
    <properties>
     <property name="BoxCollider" value="64,544,0,0,0,0,0"/>
+    <property name="ShaderComp" value="src/res/shaders/Basic.shader"/>
+    <property name="Tag" value="Wall"/>
    </properties>
   </object>
   <object id="17" name="Wall2" type="wall" x="512" y="352" width="64" height="544">
    <properties>
     <property name="BoxCollider" value="64,544,0,0,0,0,0"/>
+    <property name="ShaderComp" value="src/res/shaders/Basic.shader"/>
+    <property name="Tag" value="Wall"/>
    </properties>
   </object>
   <object id="18" name="Wall1" type="wall" x="640" y="224" width="64" height="544">
    <properties>
     <property name="BoxCollider" value="64,544,0,0,0,0,0"/>
+    <property name="ShaderComp" value="src/res/shaders/Basic.shader"/>
+    <property name="Tag" value="Wall"/>
    </properties>
   </object>
   <object id="19" name="Coin6" x="736" y="832" width="32" height="32">
@@ -156,35 +180,45 @@
   <object id="27" name="statue5" x="64" y="832" width="64" height="64">
    <properties>
     <property name="BoxCollider" value="64,64,0,0,0,0,0"/>
+    <property name="CustomScript" value="../TempleAtonement/src/scripts/Archer5.xml"/>
     <property name="ShaderComp" value="src/res/shaders/Basic.shader"/>
+    <property name="Tag" value="Enemy"/>
     <property name="TextureComp" value="../TempleAtonement/texture/statue_up.png"/>
    </properties>
   </object>
   <object id="28" name="statue4" x="192" y="224" width="64" height="64">
    <properties>
     <property name="BoxCollider" value="64,64,0,0,0,0,0"/>
+    <property name="CustomScript" value="../TempleAtonement/src/scripts/Archer4.xml"/>
     <property name="ShaderComp" value="src/res/shaders/Basic.shader"/>
+    <property name="Tag" value="Enemy"/>
     <property name="TextureComp" value="../TempleAtonement/texture/statue_down.png"/>
    </properties>
   </object>
   <object id="29" name="statue3" x="320" y="832" width="64" height="64">
    <properties>
     <property name="BoxCollider" value="64,64,0,0,0,0,0"/>
+    <property name="CustomScript" value="../TempleAtonement/src/scripts/Archer3.xml"/>
     <property name="ShaderComp" value="src/res/shaders/Basic.shader"/>
+    <property name="Tag" value="Enemy"/>
     <property name="TextureComp" value="../TempleAtonement/texture/statue_up.png"/>
    </properties>
   </object>
   <object id="30" name="statue2" x="448" y="224" width="64" height="64">
    <properties>
     <property name="BoxCollider" value="64,64,0,0,0,0,0"/>
+    <property name="CustomScript" value="../TempleAtonement/src/scripts/Archer2.xml"/>
     <property name="ShaderComp" value="src/res/shaders/Basic.shader"/>
+    <property name="Tag" value="Enemy"/>
     <property name="TextureComp" value="../TempleAtonement/texture/statue_down.png"/>
    </properties>
   </object>
   <object id="31" name="statue1" x="576" y="832" width="64" height="64">
    <properties>
     <property name="BoxCollider" value="64,64,0,0,0,0,0"/>
+    <property name="CustomScript" value="../TempleAtonement/src/scripts/Archer1.xml"/>
     <property name="ShaderComp" value="src/res/shaders/Basic.shader"/>
+    <property name="Tag" value="Enemy"/>
     <property name="TextureComp" value="../TempleAtonement/texture/statue_up.png"/>
    </properties>
   </object>
@@ -210,6 +244,7 @@
     <property name="AudioSource" value="../TempleAtonement/src/sounds/tm2_swing004.ogg,0,0,fx"/>
     <property name="BoxCollider" value="28,28,0,0,0,1,0"/>
     <property name="ShaderComp" value="src/res/shaders/Basic.shader"/>
+    <property name="Tag" value="Weapon"/>
     <property name="TextureComp" value="../TempleAtonement/texture/slash.png"/>
    </properties>
   </object>
@@ -241,12 +276,57 @@
     <property name="TextureComp" value="../TempleAtonement/texture/Numbers/0.png"/>
    </properties>
   </object>
-  <object id="42" name="lampEntity" x="542.333" y="62" width="40.6667" height="41.3333" visible="0">
+  <object id="42" name="lampEntity" x="542.333" y="62" width="40.6667" height="41.3333">
    <properties>
     <property name="AudioSource" value="../TempleAtonement/src/sounds/tm2_swing004.ogg,0,0,fx"/>
     <property name="BoxCollider" value="28,28,0,0,0,1,0"/>
     <property name="ShaderComp" value="src/res/shaders/Basic.shader"/>
     <property name="TextureComp" value="../TempleAtonement/texture/lamp.png"/>
+   </properties>
+  </object>
+  <object id="43" name="arrowFiveEntity" x="77.3333" y="780" width="32" height="32">
+   <properties>
+    <property name="BoxCollider" value="32,32,0,0,0,0,0"/>
+    <property name="CustomScript" value="../TempleAtonement/src/scripts/Arrow5.xml"/>
+    <property name="ShaderComp" value="src/res/shaders/Basic.shader"/>
+    <property name="Tag" value="arrowFiveEntity"/>
+    <property name="TextureComp" value="../TempleAtonement/texture/arrow_up.png"/>
+   </properties>
+  </object>
+  <object id="47" name="arrowThreeEntity" x="338.667" y="782.667" width="32" height="32">
+   <properties>
+    <property name="BoxCollider" value="32,32,0,0,0,0,0"/>
+    <property name="CustomScript" value="../TempleAtonement/src/scripts/Arrow3.xml"/>
+    <property name="ShaderComp" value="src/res/shaders/Basic.shader"/>
+    <property name="Tag" value="arrowThreeEntity"/>
+    <property name="TextureComp" value="../TempleAtonement/texture/arrow_up.png"/>
+   </properties>
+  </object>
+  <object id="48" name="arrowOneEntity" x="593.333" y="777.333" width="32" height="32">
+   <properties>
+    <property name="BoxCollider" value="32,32,0,0,0,0,0"/>
+    <property name="CustomScript" value="../TempleAtonement/src/scripts/Arrow1.xml"/>
+    <property name="ShaderComp" value="src/res/shaders/Basic.shader"/>
+    <property name="Tag" value="arrowOneEntity"/>
+    <property name="TextureComp" value="../TempleAtonement/texture/arrow_up.png"/>
+   </properties>
+  </object>
+  <object id="49" name="arrowFourEntity" x="209.333" y="317.333" width="32" height="32">
+   <properties>
+    <property name="BoxCollider" value="32,32,0,0,0,0,0"/>
+    <property name="CustomScript" value="../TempleAtonement/src/scripts/Arrow4.xml"/>
+    <property name="ShaderComp" value="src/res/shaders/Basic.shader"/>
+    <property name="Tag" value="arrowFourEntity"/>
+    <property name="TextureComp" value="../TempleAtonement/texture/arrow_down.png"/>
+   </properties>
+  </object>
+  <object id="50" name="arrowTwoEntity" x="466.667" y="313.333" width="32" height="32">
+   <properties>
+    <property name="BoxCollider" value="32,32,0,0,0,0,0"/>
+    <property name="CustomScript" value="../TempleAtonement/src/scripts/Arrow2.xml"/>
+    <property name="ShaderComp" value="src/res/shaders/Basic.shader"/>
+    <property name="Tag" value="arrowTwoEntity"/>
+    <property name="TextureComp" value="../TempleAtonement/texture/arrow_down.png"/>
    </properties>
   </object>
  </objectgroup>

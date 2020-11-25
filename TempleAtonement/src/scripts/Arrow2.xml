@@ -1,0 +1,41 @@
+<root>
+  <update>
+    <ifVar name="isColliding" value="true" type="bool">
+  
+      <onEntity name="arrowTwoEntity">
+        <setActive value="false"/>
+      </onEntity>
+    </ifVar>
+  </update>
+  
+  <start>
+    <ifVar name="isColliding" value="false" type="bool">
+    </ifVar>
+  </start>
+  
+  <variables>
+    <bool name="isColliding" value="false"/>
+  
+    <entity name="arrowTwoEntity" value="arrowTwoEntity"/>
+  </variables>
+  
+  <onCollision>
+    <ifVar name="collisionObject-tag" value="Player" type="string">
+      <ifVar name="isColliding" value="false" type="bool">
+        <updateVar name="isColliding" value="true" type="bool"/>
+      </ifVar>
+    </ifVar>
+    
+    <ifVar name="collisionObject-tag" value="Wall" type="string">
+      <ifVar name="isColliding" value="false" type="bool">
+        <updateVar name="isColliding" value="true" type="bool"/>
+      </ifVar>
+    </ifVar>
+      
+    <ifVar name="collisionObject-tag" value="Weapon" type="string">
+      <ifVar name="isColliding" value="false" type="bool">
+        <updateVar name="isColliding" value="true" type="bool"/>
+      </ifVar>
+    </ifVar>
+  </onCollision>
+</root>
