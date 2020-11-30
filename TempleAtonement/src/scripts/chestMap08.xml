@@ -1,7 +1,24 @@
 <root>
+    
+    <variables>
+		<globalBool name="obtainedKeyMap08" value="false"/>
+    </variables>
+	
+    <interacted>
+        
+    </interacted>
+	
+    <start>
+	    <ifGlobalVar name="obtainedKeyMap08" value="true" type="globalBool">
+		    <changeSprite name="../TempleAtonement/texture/chest_opened.png"/>
+	    </ifGlobalVar>
+    </start>
+	
     <onCollision>
-        <ifVar name="collisionObject-tag" value="Player" type="string">
-            <loadScene name="Scene 1"/>
+        <ifVar name="collisionObject-tag" value="Weapon" type="string">
+          <changeSprite name="../TempleAtonement/texture/chest_opened.png"/>
+          <updateGlobalVar name="obtainedKeyMap08" value="true" type="bool"/>
         </ifVar>
     </onCollision>
+	
 </root>

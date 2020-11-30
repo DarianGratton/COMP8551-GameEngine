@@ -16,7 +16,7 @@
         <ifVar name="collisionObject-tag" value="Weapon" type="string">
           <changeSprite name="../TempleAtonement/texture/chest_opened.png"/>
           <updateGlobalVar name="lampchestopened" value="true" type="bool"/>
-			<updateGlobalVar name="obtainedLamp" value="true" type="bool"/>
+		  <updateGlobalVar name="obtainedLamp" value="true" type="bool"/>
         </ifVar>
     </onCollision>
 	
