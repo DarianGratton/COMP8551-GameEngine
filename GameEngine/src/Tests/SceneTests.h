@@ -1,3 +1,4 @@
+#pragma once
 #include <gtest/gtest.h>
 #include <entityx/entityx.h>
 #include <vector>
@@ -457,23 +458,6 @@ TEST (AddShaderComp, ValidParameters) {
     EXPECT_TRUE(e.has_component<ShaderComp>());
 }
 
-// TEST (AddShaderComp, NullCharacter) {
-//     vector<string> parameters;
-//     parameters.push_back("\0");
-
-//     Scene scene("Scene", "tmx");
-//     Entity e = Engine::getInstance().entities.create();
-//     EXPECT_ANY_THROW(scene.addShaderComp(parameters, e));
-// }
-
-// TEST (AddShaderComp, MissingParameters) {
-//     vector<string> parameters;
-
-//     Scene scene("Scene", "tmx");
-//     Entity e = Engine::getInstance().entities.create();
-//     EXPECT_ANY_THROW(scene.addShaderComp(parameters, e));
-// }
-
 TEST (AddTextureComp, ValidParameters) {
     vector<string> parameters;
     parameters.push_back("../TempleAtonement/texture/player_up.png");
@@ -484,23 +468,6 @@ TEST (AddTextureComp, ValidParameters) {
 
     EXPECT_TRUE(e.has_component<TextureComp>());
 }
-
-// TEST (AddTextureComp, NullCharacter) {
-//     vector<string> parameters;
-//     parameters.push_back("\0");
-
-//     Scene scene("Scene", "tmx");
-//     Entity e = Engine::getInstance().entities.create();
-//     EXPECT_ANY_THROW(scene.addTextureComp(parameters, e));
-// }
-
-// TEST (AddTextureComp, MissingParameters) {
-//     vector<string> parameters;
-
-//     Scene scene("Scene", "tmx");
-//     Entity e = Engine::getInstance().entities.create();
-//     EXPECT_ANY_THROW(scene.addTextureComp(parameters, e));
-// }
 
 TEST (AddTag, ValidParameters) {
     vector<string> parameters;
