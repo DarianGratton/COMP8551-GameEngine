@@ -224,7 +224,6 @@ namespace CScript
 
         otherT.get()->x = thisT.get()->x;
         otherT.get()->y = thisT.get()->y;
-        otherT.get()->z = thisT.get()->z;
     }
 
     /**
