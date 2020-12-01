@@ -8,7 +8,7 @@ int main()
 {
     
     //create scene
-    //Scene 2 is first for testing, scene 1 should be first
+    //scene 1 should be first
     SceneManager::getInstance().addScene("Scene 1", "../TempleAtonement/src/maps/map01.tmx");
     SceneManager::getInstance().addScene("Scene 2", "../TempleAtonement/src/maps/map02.tmx");
     SceneManager::getInstance().addScene("Scene 3", "../TempleAtonement/src/maps/map03.tmx");
