@@ -8,11 +8,14 @@
         
     </interacted>
 	
-    <start>
-	    <ifGlobalVar name="obtainedKeyMap08" value="true" type="globalBool">
-		    <changeSprite name="../TempleAtonement/texture/chest_opened.png"/>
-	    </ifGlobalVar>
-    </start>
+    <update>
+      
+      <ifGlobalVar name="obtainedKeyMap08" value="true" type="bool">
+        <changeSprite name="../TempleAtonement/texture/chest_opened.png"/>
+      </ifGlobalVar>
+	  
+	</update>
+
 	
     <onCollision>
         <ifVar name="collisionObject-tag" value="Weapon" type="string">
