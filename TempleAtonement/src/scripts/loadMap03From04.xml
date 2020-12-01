@@ -6,7 +6,7 @@
     <onCollision>
         <ifVar name="collisionObject-tag" value="Player" type="string">
             <updateGlobalVar name="newPlayerX" value="304" type="float"/>
-            <updateGlobalVar name="newPlayerY" value="64" type="float"/>
+            <updateGlobalVar name="newPlayerY" value="80" type="float"/>
             <loadScene name="Scene 3"/>
         </ifVar>
     </onCollision>

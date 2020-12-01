@@ -15,12 +15,23 @@
 		<ifGlobalVar name="catLeftDirection" value="3" type="int">
 			<!-- Left -->
 			<changeSprite name="../TempleAtonement/texture/MAP03/cat_Statue_left.png"/>
-		</ifGlobalVar>
+        </ifGlobalVar>
+        
+        <ifVar name="Timing" type="bool" value="true">
+            <addVar name="Timer" type="double" value="deltaTime"/>
+            <ifVarGreater name="Timer" value="0.5" type="double">
+                <updateVar name="Timing" value="false" type="bool"/>
+                <updateVar name="Timer" value="0" type="double"/>
+            </ifVarGreater>
+        </ifVar>
     </update>
     <variables>
         <globalInt name="catLeftDirection" value="2"/> <!-- 0 - up, 1 - right, 2 - down, 3 - left -->
         <entity name="weaponEntity" value="weaponEntity"/>
         <entity name="Player" value="Player"/>
+
+        <double name="Timer" value="0.0"/>
+        <bool name="Timing" value="false"/>
     </variables>
     <start>
 
@@ -34,10 +45,11 @@
 		</ifGlobalVarGreater>
     </interacted>
     <onCollision>
-        <ifVar name="collisionObject-tag" value="Player" type="string">
-            <keyPress value="KEY_E">
+        <ifVar name="Timing" value="false" type="bool">
+            <ifVar name="collisionObject-tag" value="Weapon" type="string">
+                <updateVar name="Timing" value="true" type="bool"/>
                 <callFunction name="interacted" />
-            </keyPress>
+            </ifVar>
         </ifVar>
     </onCollision>
 </root>

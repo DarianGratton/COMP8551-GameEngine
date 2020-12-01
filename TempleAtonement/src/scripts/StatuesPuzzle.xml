@@ -1,10 +1,10 @@
 <root>
     <update>
 		<!-- check for each statue when the door close -->
-		<ifVar name="ifOpen" value="false" type="bool">
+		<ifGlobalVar name="ifOpen" value="false" type="bool">
 			<callFunction name="checkStatues"/>
 			<!-- open the door when pass the puzzle -->
-		</ifVar>
+		</ifGlobalVar>
 		
 		<!-- check if show message of sign -->
 		<ifVar name="ifShowMessage" value="true" type="bool">
@@ -35,16 +35,14 @@
 		<bool name="keyTwo" value="false"/>
 		<bool name="keyThree" value="false"/>
 		<bool name="keyFour" value="false"/>
-		<bool name="ifOpen" value="false"/>
+		<globalBool name="ifOpen" value="false"/>
 		<globalBool name="ifOpened" value="false"/>
     </variables>
     <start>
-		<ifVar name="ifOpen" value="false" type="bool">
-			<onEntity name="Scene4Exit">
-				<setActive value="false"/>
-			</onEntity>
-			<callFunction name="checkStatues"/>
-		</ifVar>
+		<onEntity name="Scene4Exit">
+			<setActive value="false"/>
+		</onEntity>
+		<callFunction name="checkStatues"/>
     </start>
 	<checkStatues>
 		<ifGlobalVar name="catLeftDirection" value="1" type="int">
@@ -59,7 +57,7 @@
 			<log value="key three open"/>
 			<updateVar name="keyThree" value="true" type="bool"/>
 		</ifGlobalVar>
-		<ifGlobalVar name="chickenDirection" value="2" type="int">
+		<ifGlobalVar name="chickenDirection" value="0" type="int">
 			<log value="key four open"/>
 			<updateVar name="keyFour" value="true" type="bool"/>
 		</ifGlobalVar>
@@ -67,12 +65,12 @@
 			<ifVar name="keyTwo" value="true" type="bool">
 				<ifVar name="keyThree" value="true" type="bool">
 					<ifVar name="keyFour" value="true" type="bool">
-						<updateVar name="ifOpen" value="true" type="bool"/>
+						<updateGlobalVar name="ifOpen" value="true" type="bool"/>
 					</ifVar>
 				</ifVar>
 			</ifVar>
 		</ifVar>
-		<ifVar name="ifOpen" value="true" type="bool">
+		<ifGlobalVar name="ifOpen" value="true" type="bool">
 			<onEntity name="Scene4Exit">
 				<setActive value="true"/>
 			</onEntity>
@@ -83,7 +81,7 @@
 				<changeSprite name="../TempleAtonement/texture/MAP03/MAP03_DOOR_OPEN.png"/>
 			</onEntity>
 			<updateGlobalVar name="ifOpened" value="true" type="bool"/>
-		</ifVar>
+		</ifGlobalVar>
 	</checkStatues>
     <onCollision>
 		<ifVar name="collisionObject-tag" value="Player" type="string">
