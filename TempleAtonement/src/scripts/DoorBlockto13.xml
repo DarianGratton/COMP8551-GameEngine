@@ -1,33 +1,34 @@
 <root>
 
-    <update>
-	    <ifVar name="activatedSwitch" value="true" type="bool">
-        </ifVar>
-    </update>
-    
-	<variables>
-        <bool name="activatedSwitch" value="false"/>
-        <globalInt name="numOrbsFlipped" value="0"/>
-    </variables>
 
-    <interacted>
-        
-    </interacted>
+  <variables>
+    <globalBool name="doorlocked13" value="true"/>
+    <entity name="weaponEntity" value="weaponEntity"/>
 
-    <start>
-	
-    </start>
-	
-    <onCollision>
-        <ifVar name="collisionObject-tag" value="Weapon" type="string">
-			<ifVar name="activatedSwitch" value="false" type="bool">
-				<log value="Player turned a switch on." />
-				<changeSprite name="../TempleAtonement/texture/orb_on.png"/>
-				<addGlobalVar name="numOrbsFlipped" value="1" type="int" />
-				<updateVar name="activatedSwitch" value="true" type="bool" />
-			</ifVar>
-        </ifVar>
-    </onCollision>
+  </variables>
+
+  <onCollision>
+    <ifVar name="collisionObject-tag" value="Weapon" type="string">
+      <ifGlobalVar name="obtainedKeyMap12" value="true" type="bool">
+        <ifGlobalVar name="obtainedKeyMap08" value="true" type="bool">
+          <updateGlobalVar name="doorlocked13" value="false" type="bool"/>
+        </ifGlobalVar>
+      </ifGlobalVar>
+
+      <ifGlobalVar name="doorlocked13" value="false" type="bool">
+        <setActive value="false"/>
+      </ifGlobalVar>
+    </ifVar>
+
+  </onCollision>
+
+  <start>
+    <ifGlobalVar name="doorlocked13" type="bool" value="false">
+      <setActive value="false"/>
+    </ifGlobalVar>
+  </start>
+
+
 </root>
 
 <!-- 

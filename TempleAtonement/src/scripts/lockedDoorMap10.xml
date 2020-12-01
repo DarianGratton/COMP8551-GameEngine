@@ -2,8 +2,8 @@
 
     <update>
 		<!-- set puzzle as cleared when 4 orbs are toggled on -->
-		<ifGlobalVar name="numOrbsFlipped" value="4" type="globalInt">
-			<updateGlobalVar name="map10DoorOpened" value="true" type="globalBool" />
+		<ifGlobalVar name="numOrbsFlipped" value="4" type="int">
+			<updateGlobalVar name="map10DoorOpened" value="true" type="bool" />
 			<setActive value="false" />
 		</ifGlobalVar>
     </update>
@@ -19,10 +19,10 @@
 
     <start>
 		<!-- reset puzzle progress on entering room -->
-		<updateGlobalVar name="numOrbsFlipped" value="0" type="globalInt" />
+		<updateGlobalVar name="numOrbsFlipped" value="0" type="int" />
 		
 		<!-- destroy door if puzzle previously cleared -->
-		<ifGlobalVar name="map10DoorOpened" value="true" type="globalBool">
+		<ifGlobalVar name="map10DoorOpened" value="true" type="bool">
 			<setActive value="false" />
 		</ifGlobalVar>		
     </start>
