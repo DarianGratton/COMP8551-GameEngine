@@ -1,41 +1,43 @@
 <root>
     <update>
-        <ifVar name="statueDirection" value="0" type="int">
+        <ifGlobalVar name="chickenDirection" value="0" type="int">
 			<!-- Up -->
 			<changeSprite name="../TempleAtonement/texture/MAP03/chicken_Statue_back.png"/>
-		</ifVar>
-		<ifVar name="statueDirection" value="1" type="int">
+		</ifGlobalVar>
+		<ifGlobalVar name="chickenDirection" value="1" type="int">
 			<!-- Right -->
 			<changeSprite name="../TempleAtonement/texture/MAP03/chicken_Statue_right.png"/>
-		</ifVar>
-		<ifVar name="statueDirection" value="2" type="int">
+		</ifGlobalVar>
+		<ifGlobalVar name="chickenDirection" value="2" type="int">
 			<!-- Down -->
 			<changeSprite name="../TempleAtonement/texture/MAP03/chicken_Statue_forward.png"/>
-		</ifVar>
-		<ifVar name="statueDirection" value="3" type="int">
+		</ifGlobalVar>
+		<ifGlobalVar name="chickenDirection" value="3" type="int">
 			<!-- Left -->
 			<changeSprite name="../TempleAtonement/texture/MAP03/chicken_Statue_left.png"/>
-		</ifVar>
+		</ifGlobalVar>
     </update>
     <variables>
-        <int name="statueDirection" value="2"/> <!-- 0 - up, 1 - right, 2 - down, 3 - left -->
+        <globalInt name="chickenDirection" value="2"/> <!-- 0 - up, 1 - right, 2 - down, 3 - left -->
         <entity name="weaponEntity" value="weaponEntity"/>
         <entity name="Player" value="Player"/>
     </variables>
     <start>
 
     </start>
+    <interacted>
+		<ifGlobalVarLess name="chickenDirection" value="4" type="int">
+			<addGlobalVar name="chickenDirection" value="1" type="int"/>
+		</ifGlobalVarLess>
+		<ifGlobalVarGreater name="chickenDirection" value="3" type="int">
+			<updateGlobalVar name="chickenDirection" value="0" type="int"/>
+		</ifGlobalVarGreater>
+    </interacted>
     <onCollision>
-        <ifVar name="collisionObject-tag" value="Weapon" type="string">
-            <ifVarGreater name="statueDirection" value="3" type="int">
-				<updateVar name="statueDirection" value="0" type="int"/>
-			</ifVarGreater>
-			<ifVar name="statueDirection" value="3" type="int">
-				<updateVar name="statueDirection" value="0" type="int"/>
-			</ifVar>
-			<ifVarLess name="statueDirection" value="3" type="int">
-				<addVar name="statueDirection" value="1" type="int"/>
-			</ifVarLess>
+        <ifVar name="collisionObject-tag" value="Player" type="string">
+            <keyPress value="KEY_E">
+                <callFunction name="interacted" />
+            </keyPress>
         </ifVar>
     </onCollision>
 </root>
