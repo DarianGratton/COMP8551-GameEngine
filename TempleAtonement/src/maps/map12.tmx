@@ -9,7 +9,7 @@
     <property name="TextureComp" value="../TempleAtonement/texture/MAP12/MAP12_FLOOR.png"/>
    </properties>
   </object>
-  <object id="270" name="Collider" x="0" y="432" width="240" height="48">
+  <object id="270" name="Collider" x="-10" y="432" width="240" height="48">
    <properties>
     <property name="BoxCollider" value="240,48,0,0,0,0,0"/>
    </properties>
@@ -110,12 +110,12 @@
     <property name="TextureComp" value="../TempleAtonement/texture/chest_closed.png"/>
    </properties>
   </object>
-  <object id="329" name="Collider" x="336" y="432" width="240" height="48">
+  <object id="329" name="Collider" x="346" y="432" width="240" height="48">
    <properties>
     <property name="BoxCollider" value="240,48,0,0,0,0,0"/>
    </properties>
   </object>
-  <object id="330" name="Collider" x="0" y="0" width="48" height="433">
+  <object id="330" name="Collider" x="10" y="0" width="48" height="433">
    <properties>
     <property name="BoxCollider" value="48,433,0,0,0,0,0"/>
    </properties>
@@ -125,7 +125,7 @@
     <property name="BoxCollider" value="572,48,0,0,0,0,0"/>
    </properties>
   </object>
-  <object id="332" name="Collider" x="528" y="0" width="48" height="480">
+  <object id="332" name="Collider" x="518" y="0" width="48" height="480">
    <properties>
     <property name="BoxCollider" value="48,480,0,0,0,0,0"/>
    </properties>

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.4" tiledversion="1.4.2" orientation="orthogonal" renderorder="right-down" width="12" height="10" tilewidth="48" tileheight="48" infinite="0" nextlayerid="4" nextobjectid="339">
+<map version="1.4" tiledversion="1.4.2" orientation="orthogonal" renderorder="right-down" width="12" height="10" tilewidth="48" tileheight="48" infinite="0" nextlayerid="4" nextobjectid="340">
  <tileset firstgid="1" source="Dungeon.tsx"/>
  <tileset firstgid="1" source="blobsprite_01.tsx"/>
  <objectgroup id="2" name="Scene 11">
@@ -9,12 +9,12 @@
     <property name="TextureComp" value="../TempleAtonement/texture/MAP11/MAP11_FLOOR.png"/>
    </properties>
   </object>
-  <object id="267" name="Collider" x="0" y="0" width="48" height="479">
+  <object id="267" name="Collider" x="11" y="0" width="48" height="479">
    <properties>
     <property name="BoxCollider" value="48,479,0,0,0,0,0"/>
    </properties>
   </object>
-  <object id="269" name="Collider" x="48" y="0" width="192" height="48">
+  <object id="269" name="Collider" x="38" y="0" width="192" height="48">
    <properties>
     <property name="BoxCollider" value="192,48,0,0,0,0,0"/>
    </properties>
@@ -64,12 +64,12 @@
     <property name="TextureComp" value="../TempleAtonement/texture/player_up.png"/>
    </properties>
   </object>
-  <object id="316" name="Collider" x="528" y="0" width="48" height="479">
+  <object id="316" name="Collider" x="518" y="0" width="48" height="479">
    <properties>
     <property name="BoxCollider" value="48,479,0,0,0,0,0"/>
    </properties>
   </object>
-  <object id="317" name="Collider" x="336" y="0" width="192" height="48">
+  <object id="317" name="Collider" x="346" y="0" width="192" height="48">
    <properties>
     <property name="BoxCollider" value="192,48,0,0,0,0,0"/>
    </properties>
@@ -159,11 +159,13 @@
    </properties>
    <ellipse/>
   </object>
-  <object id="326" name="Chest" x="288" y="192" width="48" height="48">
+  <object id="339" name="orb_11" type="orb_off" x="277" y="338" width="38" height="38">
    <properties>
-    <property name="BoxCollider" value="48,48,0,0,0,0,0"/>
+    <property name="BoxCollider" value="38,38,0,0,0,0,0"/>
+    <property name="CustomScript" value="../TempleAtonement/src/scripts/map11Switch.xml"/>
     <property name="ShaderComp" value="src/res/shaders/Basic.shader"/>
-    <property name="TextureComp" value="src/res/textures/Chest.png"/>
+    <property name="Tag" value="Switch"/>
+    <property name="TextureComp" value="../TempleAtonement/texture/orb_off.png"/>
    </properties>
   </object>
   <object id="327" name="Walls" x="0" y="0" width="576" height="482">

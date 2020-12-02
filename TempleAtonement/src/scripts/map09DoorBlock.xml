@@ -1,0 +1,10 @@
+<root>
+    <start>
+        <ifGlobalVar name="map09DoorOpen" value="true" type="bool">
+            <setActive value="false"/>
+        </ifGlobalVar>
+    </start>
+    <variables>
+        <globalBool name="map09DoorOpen" value="false"/>
+    </variables>
+</root>

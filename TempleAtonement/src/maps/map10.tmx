@@ -180,7 +180,7 @@
     <property name="CustomScript" value="../TempleAtonement/src/scripts/player.xml"/>
     <property name="ShaderComp" value="src/res/shaders/Basic.shader"/>
     <property name="Tag" value="Player"/>
-    <property name="TextureComp" value="../TempleAtonement/texture/MAP09/player_up.png"/>
+    <property name="TextureComp" value="../TempleAtonement/texture/player_up.png"/>
    </properties>
   </object>
   <object id="51" name="door11trigger" x="480" y="1024" width="96" height="32">

@@ -13,7 +13,7 @@
     <property name="TextureComp" value="../TempleAtonement/texture/MAP04/MAP04_WALLS.png"/>
    </properties>
   </object>
-  <object id="25" name="wall8" type="wall" x="0.37954" y="-2.21794" width="64" height="256">
+  <object id="25" name="wall8" type="wall" x="0" y="0" width="64" height="256">
    <properties>
     <property name="BoxCollider" value="64,256,0,0,0,0,0"/>
    </properties>
@@ -212,7 +212,7 @@
   </object>
   <object id="47" name="doorblock9" type="wall" x="0" y="256" width="64" height="96">
    <properties>
-    <property name="BoxCollider" value="32,60,0,-10,0,0,0"/>
+    <property name="BoxCollider" value="64,96,0,0,0,0,0"/>
     <property name="CustomScript" value="../TempleAtonement/src/scripts/DoorBlockto9.xml"/>
     <property name="ShaderComp" value="src/res/shaders/Basic.shader"/>
     <property name="Tag" value="Block"/>
@@ -230,7 +230,7 @@
   </object>
   <object id="51" name="doorblock5" type="wall" x="576" y="256" width="64" height="96">
    <properties>
-    <property name="BoxCollider" value="32,60,0,-10,0,0,0"/>
+    <property name="BoxCollider" value="64,96,0,0,0,0,0"/>
     <property name="CustomScript" value="../TempleAtonement/src/scripts/DoorBlockto5.xml"/>
     <property name="ShaderComp" value="src/res/shaders/Basic.shader"/>
     <property name="Tag" value="Block"/>
