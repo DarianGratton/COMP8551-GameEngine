@@ -4,15 +4,6 @@
 		<ifVar name="ifOpen" value="false" type="bool">
 			<callFunction name="checkStatues"/>
 			<!-- open the door when pass the puzzle -->
-			<ifVar name="ifOpen" value="true" type="bool">
-				<onEntity name="Scene4Exit">
-					<setActive value="true"/>
-				</onEntity>
-				<onEntity name="TempleGate">
-					<playAudio/>
-					<changeSprite name="../TempleAtonement/texture/MAP03/MAP03_DOOR_OPEN.png"/>
-				</onEntity>
-			</ifVar>
 		</ifVar>
 		
 		<!-- check if show message of sign -->
@@ -26,6 +17,7 @@
 				<setActive value="false"/>
 			</onEntity>
 		</ifVar>
+		<updateVar name="ifShowMessage" value="false" type="bool"/>
     </update>
     <variables>
         <entity name="weaponEntity" value="weaponEntity"/>
@@ -44,40 +36,33 @@
 		<bool name="keyThree" value="false"/>
 		<bool name="keyFour" value="false"/>
 		<bool name="ifOpen" value="false"/>
+		<globalBool name="ifOpened" value="false"/>
     </variables>
+    <start>
+		<ifVar name="ifOpen" value="false" type="bool">
+			<onEntity name="Scene4Exit">
+				<setActive value="false"/>
+			</onEntity>
+			<callFunction name="checkStatues"/>
+		</ifVar>
+    </start>
 	<checkStatues>
-		<onEntity name="CatStatueLeft">
-			<ifVar name="statueDirection" value="1" type="int">
-				<log value="key one open"/>
-				<onEntity name="RiddleSign">
-					<updateVar name="keyOne" value="true" type="bool"/>
-				</onEntity>
-			</ifVar>
-		</onEntity>
-		<onEntity name="CatStatueRight">
-			<ifVar name="statueDirection" value="3" type="int">
-				<log value="key two open"/>
-				<onEntity name="RiddleSign">
-					<updateVar name="keyTwo" value="true" type="bool"/>
-				</onEntity>
-			</ifVar>
-		</onEntity>
-		<onEntity name="DogStatue">
-			<ifVar name="statueDirection" value="0" type="int">
-				<log value="key three open"/>
-				<onEntity name="RiddleSign">
-					<updateVar name="keyThree" value="true" type="bool"/>
-				</onEntity>
-			</ifVar>
-		</onEntity>
-		<onEntity name="ChickenStatue">
-			<ifVar name="statueDirection" value="2" type="int">
-				<log value="key four open"/>
-				<onEntity name="RiddleSign">
-					<updateVar name="keyFour" value="true" type="bool"/>
-				</onEntity>
-			</ifVar>
-		</onEntity>
+		<ifGlobalVar name="catLeftDirection" value="1" type="int">
+			<log value="key one open"/>
+			<updateVar name="keyOne" value="true" type="bool"/>
+		</ifGlobalVar>
+		<ifGlobalVar name="catRightDirection" value="3" type="int">
+			<log value="key two open"/>
+			<updateVar name="keyTwo" value="true" type="bool"/>
+		</ifGlobalVar>
+		<ifGlobalVar name="dogDirection" value="0" type="int">
+			<log value="key three open"/>
+			<updateVar name="keyThree" value="true" type="bool"/>
+		</ifGlobalVar>
+		<ifGlobalVar name="chickenDirection" value="2" type="int">
+			<log value="key four open"/>
+			<updateVar name="keyFour" value="true" type="bool"/>
+		</ifGlobalVar>
 		<ifVar name="keyOne" value="true" type="bool">
 			<ifVar name="keyTwo" value="true" type="bool">
 				<ifVar name="keyThree" value="true" type="bool">
@@ -87,17 +72,25 @@
 				</ifVar>
 			</ifVar>
 		</ifVar>
-	</checkStatues>
-    <start>
-		<!-- <ifVar name="ifOpen" value="false" type="bool">
+		<ifVar name="ifOpen" value="true" type="bool">
 			<onEntity name="Scene4Exit">
-				<setActive value="false"/>
+				<setActive value="true"/>
 			</onEntity>
-		</ifVar> -->
-    </start>
+			<onEntity name="TempleGate">
+				<ifGlobalVar name="ifOpened" value="false" type="bool">
+					<playAudio/>
+				</ifGlobalVar>
+				<changeSprite name="../TempleAtonement/texture/MAP03/MAP03_DOOR_OPEN.png"/>
+			</onEntity>
+			<updateGlobalVar name="ifOpened" value="true" type="bool"/>
+		</ifVar>
+	</checkStatues>
     <onCollision>
-		<ifVar name="collisionObject-tag" value="Weapon" type="string">
-            <flipBool name="ifShowMessage"/>
+		<ifVar name="collisionObject-tag" value="Player" type="string">
+			<updateVar name="ifShowMessage" value="true" type="bool"/>
+			<!--	<keyPress value="KEY_E">
+                <flipBool name="ifShowMessage"/>
+            </keyPress> -->
         </ifVar>
     </onCollision>
 </root>
