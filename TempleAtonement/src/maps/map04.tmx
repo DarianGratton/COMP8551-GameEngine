@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.4" tiledversion="1.4.2" orientation="orthogonal" renderorder="left-down" width="20" height="20" tilewidth="32" tileheight="32" infinite="0" nextlayerid="3" nextobjectid="60">
+<map version="1.4" tiledversion="1.4.2" orientation="orthogonal" renderorder="left-down" width="20" height="20" tilewidth="32" tileheight="32" infinite="0" nextlayerid="3" nextobjectid="62">
  <objectgroup id="2" name="Object Layer 1">
   <object id="1" name="Land" x="0" y="0" width="640" height="640">
    <properties>
@@ -339,6 +339,12 @@
     <property name="ShaderComp" value="src/res/shaders/Basic.shader"/>
     <property name="Tag" value="healthFifthDigitEntity"/>
     <property name="TextureComp" value="../TempleAtonement/texture/health_icon.png"/>
+   </properties>
+  </object>
+  <object id="61" name="bossdoornotice" x="185.04" y="8.28692" width="293.172" height="99.6814" visible="0">
+   <properties>
+    <property name="ShaderComp" value="src/res/shaders/Basic.shader"/>
+    <property name="TextureComp" value="../TempleAtonement/texture/bossdoornotice.png"/>
    </properties>
   </object>
  </objectgroup>

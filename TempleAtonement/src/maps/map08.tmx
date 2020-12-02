@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.4" tiledversion="1.4.2" orientation="orthogonal" renderorder="right-down" width="12" height="10" tilewidth="48" tileheight="48" infinite="0" nextlayerid="3" nextobjectid="305">
+<map version="1.4" tiledversion="1.4.2" orientation="orthogonal" renderorder="right-down" width="12" height="10" tilewidth="48" tileheight="48" infinite="0" nextlayerid="3" nextobjectid="306">
  <tileset firstgid="1" source="Dungeon.tsx"/>
  <tileset firstgid="1" source="blobsprite_01.tsx"/>
  <objectgroup id="2" name="Scene 8">
@@ -264,6 +264,12 @@
     <property name="ShaderComp" value="src/res/shaders/Basic.shader"/>
     <property name="Tag" value="healthFifthDigitEntity"/>
     <property name="TextureComp" value="../TempleAtonement/texture/health_icon.png"/>
+   </properties>
+  </object>
+  <object id="305" name="keynotice" x="206" y="57" width="320" height="128" visible="0">
+   <properties>
+    <property name="ShaderComp" value="src/res/shaders/Basic.shader"/>
+    <property name="TextureComp" value="../TempleAtonement/texture/ObtainedKeyNotice.png"/>
    </properties>
   </object>
  </objectgroup>
