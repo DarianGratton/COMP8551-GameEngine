@@ -4,8 +4,38 @@
   <variables>
     <globalBool name="doorlocked13" value="true"/>
     <entity name="weaponEntity" value="weaponEntity"/>
+    <entity name="bossdoornotice" value="bossdoornotice"/>
+    <entity name="Player" value="Player"/>
 
   </variables>
+
+
+  <update>
+
+    <onEntity name="bossdoornotice">
+      <keyPress value="KEY_SPACE">
+        <setActive value="false"/>
+      </keyPress>
+      <keyPress value="KEY_Q">
+        <setActive value="false"/>
+      </keyPress>
+      <keyPress value="KEY_W">
+        <setActive value="false"/>
+      </keyPress>
+      <keyPress value="KEY_D">
+        <setActive value="false"/>
+      </keyPress>
+      <keyPress value="KEY_S">
+        <setActive value="false"/>
+      </keyPress>
+      <keyPress value="KEY_A">
+        <setActive value="false"/>
+      </keyPress>
+    </onEntity>
+
+
+  </update>
+
 
   <onCollision>
     <ifVar name="collisionObject-tag" value="Weapon" type="string">
@@ -20,8 +50,22 @@
       </ifGlobalVar>
     </ifVar>
 
-  </onCollision>
 
+
+   
+      <ifVar name="collisionObject-tag" value="Player" type="string">
+        <onEntity name="bossdoornotice">
+          <setActive value="true"/>
+        </onEntity>
+      </ifVar>
+    
+    
+    </onCollision>
+
+  
+  
+  
+  
   <start>
     <ifGlobalVar name="doorlocked13" type="bool" value="false">
       <setActive value="false"/>
