@@ -2,11 +2,14 @@
 
 
   <variables>
-    <globalBool name="doorlocked13" value="true"/>
-    <entity name="weaponEntity" value="weaponEntity"/>
-    <entity name="bossdoornotice" value="bossdoornotice"/>
-    <entity name="Player" value="Player"/>
+    <globalBool name="doorlocked13" value="true" />
+    <entity name="weaponEntity" value="weaponEntity" />
+    <entity name="bossdoornotice" value="bossdoornotice" />
+    <entity name="Player" value="Player" />
 
+    <globalBool name="obtainedKeyMap12" value="false" />
+    <globalBool name="obtainedKeyMap08" value="false" />
+    <globalBool name="doorlocked13" value="true" />
   </variables>
 
 
@@ -14,22 +17,22 @@
 
     <onEntity name="bossdoornotice">
       <keyPress value="KEY_SPACE">
-        <setActive value="false"/>
+        <setActive value="false" />
       </keyPress>
       <keyPress value="KEY_Q">
-        <setActive value="false"/>
+        <setActive value="false" />
       </keyPress>
       <keyPress value="KEY_W">
-        <setActive value="false"/>
+        <setActive value="false" />
       </keyPress>
       <keyPress value="KEY_D">
-        <setActive value="false"/>
+        <setActive value="false" />
       </keyPress>
       <keyPress value="KEY_S">
-        <setActive value="false"/>
+        <setActive value="false" />
       </keyPress>
       <keyPress value="KEY_A">
-        <setActive value="false"/>
+        <setActive value="false" />
       </keyPress>
     </onEntity>
 
@@ -38,43 +41,35 @@
 
 
   <onCollision>
-    <ifVar name="collisionObject-tag" value="Weapon" type="string">
+    <ifVar name="collisionObject-tag" value="Player" type="string">
       <ifGlobalVar name="obtainedKeyMap12" value="true" type="bool">
         <ifGlobalVar name="obtainedKeyMap08" value="true" type="bool">
-          <updateGlobalVar name="doorlocked13" value="false" type="bool"/>
+          <updateGlobalVar name="doorlocked13" value="false" type="bool" />
         </ifGlobalVar>
       </ifGlobalVar>
 
+      <ifGlobalVar name="doorlocked13" value="true" type="bool">
+        <onEntity name="bossdoornotice">
+          <setActive value="true" />
+        </onEntity>
+      </ifGlobalVar>
+
       <ifGlobalVar name="doorlocked13" value="false" type="bool">
-        <setActive value="false"/>
+        <setActive value="false" />
       </ifGlobalVar>
     </ifVar>
 
+  </onCollision>
 
 
-   
-      <ifVar name="collisionObject-tag" value="Player" type="string">
-        <onEntity name="bossdoornotice">
-          <setActive value="true"/>
-        </onEntity>
-      </ifVar>
-    
-    
-    </onCollision>
-
-  
-  
-  
-  
   <start>
     <ifGlobalVar name="doorlocked13" type="bool" value="false">
-      <setActive value="false"/>
+      <setActive value="false" />
     </ifGlobalVar>
   </start>
 
 
 </root>
-
 <!-- 
 Reserved:
 Variable Names:
