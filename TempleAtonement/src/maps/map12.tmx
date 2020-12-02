@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.4" tiledversion="1.4.2" orientation="orthogonal" renderorder="right-down" width="12" height="10" tilewidth="48" tileheight="48" infinite="0" nextlayerid="4" nextobjectid="333">
+<map version="1.4" tiledversion="1.4.2" orientation="orthogonal" renderorder="right-down" width="12" height="10" tilewidth="48" tileheight="48" infinite="0" nextlayerid="4" nextobjectid="334">
  <tileset firstgid="1" source="Dungeon.tsx"/>
  <tileset firstgid="1" source="blobsprite_01.tsx"/>
  <objectgroup id="2" name="Scene 12">
@@ -216,6 +216,12 @@
   <object id="332" name="Collider" x="528" y="0" width="48" height="480">
    <properties>
     <property name="BoxCollider" value="48,480,0,0,0,0,0"/>
+   </properties>
+  </object>
+  <object id="333" name="keynotice" x="111" y="109" width="320" height="128" visible="0">
+   <properties>
+    <property name="ShaderComp" value="src/res/shaders/Basic.shader"/>
+    <property name="TextureComp" value="../TempleAtonement/texture/ObtainedKeyNotice.png"/>
    </properties>
   </object>
  </objectgroup>

@@ -2,6 +2,7 @@
     
     <variables>
 		<globalBool name="obtainedKeyMap12" value="false"/>
+       <entity name="keynotice" value="keynotice"/>
     </variables>
 	
     <interacted>
@@ -13,14 +14,40 @@
       <ifGlobalVar name="obtainedKeyMap12" value="true" type="bool">
         <changeSprite name="../TempleAtonement/texture/chest_opened.png"/>
       </ifGlobalVar>
-	  
-	</update>
+
+
+      <onEntity name="keynotice">
+        <keyPress value="KEY_SPACE">
+          <setActive value="false"/>
+        </keyPress>
+        <keyPress value="KEY_Q">
+          <setActive value="false"/>
+        </keyPress>
+        <keyPress value="KEY_W">
+          <setActive value="false"/>
+        </keyPress>
+        <keyPress value="KEY_D">
+          <setActive value="false"/>
+        </keyPress>
+        <keyPress value="KEY_S">
+          <setActive value="false"/>
+        </keyPress>
+        <keyPress value="KEY_A">
+          <setActive value="false"/>
+        </keyPress>
+      </onEntity>
+
+
+    </update>
 
 	
     <onCollision>
         <ifVar name="collisionObject-tag" value="Weapon" type="string">
           <changeSprite name="../TempleAtonement/texture/chest_opened.png"/>
           <updateGlobalVar name="obtainedKeyMap12" value="true" type="bool"/>
+          <onEntity name="keynotice">
+            <setActive value="true"/>
+          </onEntity>
         </ifVar>
     </onCollision>
 	

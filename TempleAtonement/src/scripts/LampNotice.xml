@@ -5,7 +5,6 @@
         <globalBool name="lampchestopened" value="false"/>
         <entity name="weaponEntity" value="weaponEntity"/>
         <entity name="Player" value="Player"/>
-        <entity name="torch2" value="torch2"/>
     </variables>
     <interacted>
         
