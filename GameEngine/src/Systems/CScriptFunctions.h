@@ -2,6 +2,7 @@
 
 #include <entityx/entityx.h>
 #include <cmath>
+#include <math.h> 
 
 #include "../Components/Components.h"
 #include "../Events/Events.h"
@@ -456,6 +457,38 @@ namespace CScript
         } else {
             cScript->bools.at(varName) = true;
         }
+    }
+
+    void getAngle(string varName, string xVariable, string yVariable, ComponentHandle<CustomScript> cScript) {
+        if (!currEntity->valid() || !cScript.valid()) {
+            return;
+        }
+                
+        if (!cScript.get()->containsVariable(varName) || !cScript.get()->containsVariable(xVariable) || !cScript.get()->containsVariable(yVariable) )
+            return;
+
+        float x = cScript->floats.at(xVariable);
+        float y = cScript->floats.at(yVariable);
+        float angle = atan2f(y, x) * 180 / M_PI; //This makes my vscode complain, but it compiles fine!
+        cScript->floats.at(varName) = angle;
+        Logger::getInstance() << "Angle is " << angle << "\n";
+    }
+
+    void setRotation(string varName, ComponentHandle<CustomScript> cScript) {
+        if (!currEntity->valid() || !cScript.valid()) {
+            return;
+        }
+
+        if (!cScript.get()->containsVariable(varName))
+            return;
+
+        if (!currEntity->has_component<Transform>())
+            return;
+        
+        ComponentHandle<Transform> handle = currEntity->component<Transform>();
+
+        handle->angle = cScript->floats.at(varName);
+        Logger::getInstance() << "finished assigning rotation\n";
     }
 
     /**

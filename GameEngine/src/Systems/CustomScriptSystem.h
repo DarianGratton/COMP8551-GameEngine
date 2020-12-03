@@ -662,6 +662,12 @@ public:
                 if (name == "setPos")
                     CScript::setPosition(attributes.at("x"), attributes.at("y"), cScript);
 
+                if (name == "getAngle")
+                    CScript::getAngle(attributes.at("name"), attributes.at("x"), attributes.at("y"), cScript);
+
+                if (name == "setRotation")
+                    CScript::setRotation(attributes.at("name"), cScript);
+
                 command = command->NextSibling();
             }
         }
