@@ -37,12 +37,8 @@
 
     </start>
     <interacted>
-		<ifGlobalVarLess name="catRightDirection" value="4" type="int">
-			<addGlobalVar name="catRightDirection" value="1" type="int"/>
-		</ifGlobalVarLess>
-		<ifGlobalVarGreater name="catRightDirection" value="3" type="int">
-			<updateGlobalVar name="catRightDirection" value="0" type="int"/>
-		</ifGlobalVarGreater>
+        <addGlobalVar name="catRightDirection" value="1" type="int"/>
+        <modGlobalVar name="catRightDirection" value="4" type="int"/>
     </interacted>
     <onCollision>
         <ifVar name="Timing" value="false" type="bool">

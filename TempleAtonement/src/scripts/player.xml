@@ -288,18 +288,18 @@
     </update>
 
     <progressText>
-        <ifVar name="cutsceneProgressionValue" type="int" value="1">
+        <ifGlobalVar name="cutsceneProgressionValue" type="int" value="1">
             <onEntity name="cutsceneText">
                 <setActive value="false"/>
             </onEntity>
-            <updateVar name="cutsceneProgressionValue" type="int" value="2"/>
-        </ifVar>
-        <ifVar name="cutsceneProgressionValue" type="int" value="0">
+            <updateGlobalVar name="cutsceneProgressionValue" type="int" value="2"/>
+        </ifGlobalVar>
+        <ifGlobalVar name="cutsceneProgressionValue" type="int" value="0">
             <onEntity name="cutsceneText">
                 <changeSprite name="../TempleAtonement/texture/MAP01/Cutscene02.png"/>
             </onEntity>
-            <updateVar name="cutsceneProgressionValue" type="int" value="1"/>
-        </ifVar>
+            <updateGlobalVar name="cutsceneProgressionValue" type="int" value="1"/>
+        </ifGlobalVar>
     </progressText>
     
     <variables>
@@ -348,7 +348,7 @@
         <int name="scoreFourthDigit" value="0"/>
 
         <entity name="cutsceneText" value="CutsceneText"/>
-        <int name="cutsceneProgressionValue" value="0"/>
+        <globalInt name="cutsceneProgressionValue" value="-1"/>
 
         <entity name="darkness" value="Darkness"/>
 
@@ -942,6 +942,14 @@
         <callFunction name="updatePointDisplay"/>
         <callFunction name="updatePos"/>
         <callFunction name="removeTakenCoins"/>
+        <ifGlobalVarGreater name="cutsceneProgressionValue" type="int" value="-1">
+            <onEntity name="cutsceneText">
+                <setActive value="false"/>
+            </onEntity>
+        </ifGlobalVarGreater>
+        <ifGlobalVar name="cutsceneProgressionValue" type="int" value="-1">
+            <addGlobalVar name="cutsceneProgressionValue" type="int" value="1"/>
+        </ifGlobalVar>
     </start>
     <onCollision>
         <ifVar name="collisionObject-tag" value="Enemy" type="string">

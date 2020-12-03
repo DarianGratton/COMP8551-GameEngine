@@ -278,6 +278,12 @@
     <property name="TextureComp" value="../TempleAtonement/texture/lampnotice.png"/>
    </properties>
   </object>
+  <object id="61" name="bossdoornotice" x="185.04" y="8.28692" width="293.172" height="99.6814" visible="0">
+   <properties>
+    <property name="ShaderComp" value="src/res/shaders/Basic.shader"/>
+    <property name="TextureComp" value="../TempleAtonement/texture/bossdoornotice.png"/>
+   </properties>
+  </object>
   <object id="42" name="scoreFirstDigitEntity" x="599.755" y="-58.3075" width="40" height="40">
    <properties>
     <property name="ShaderComp" value="src/res/shaders/Basic.shader"/>
@@ -339,12 +345,6 @@
     <property name="ShaderComp" value="src/res/shaders/Basic.shader"/>
     <property name="Tag" value="healthFifthDigitEntity"/>
     <property name="TextureComp" value="../TempleAtonement/texture/health_icon.png"/>
-   </properties>
-  </object>
-  <object id="61" name="bossdoornotice" x="185.04" y="8.28692" width="293.172" height="99.6814" visible="0">
-   <properties>
-    <property name="ShaderComp" value="src/res/shaders/Basic.shader"/>
-    <property name="TextureComp" value="../TempleAtonement/texture/bossdoornotice.png"/>
    </properties>
   </object>
  </objectgroup>

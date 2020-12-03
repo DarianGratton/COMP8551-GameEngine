@@ -6,6 +6,8 @@
         <entity name="weaponEntity" value="weaponEntity"/>
         <entity name="Player" value="Player"/>
       <entity name="lampnotice" value="lampnotice"/>
+      <double name="timer" value="0"/>
+      <bool name="isTiming" value="false"/>
     </variables>
     <interacted>
         
@@ -17,26 +19,55 @@
         <updateGlobalVar name="obtainedLamp" value="true" type="bool"/>
       </ifGlobalVar>
 
-      <onEntity name="lampnotice">
-        <keyPress value="KEY_SPACE">
-          <setActive value="false"/>
-        </keyPress>
-        <keyPress value="KEY_F">
-          <setActive value="false"/>
-        </keyPress>
-        <keyPress value="KEY_W">
-          <setActive value="false"/>
-        </keyPress>
-        <keyPress value="KEY_D">
-          <setActive value="false"/>
-        </keyPress>
-        <keyPress value="KEY_S">
-          <setActive value="false"/>
-        </keyPress>
-        <keyPress value="KEY_A">
-          <setActive value="false"/>
-        </keyPress>
-      </onEntity>
+      <ifVar name="isTiming" type="bool" value="true">
+        <addVar name="timer" value="deltaTime" type="double"/>
+        <ifVarGreater name="timer" type="double" value="2">
+            <keyPress value="KEY_SPACE">
+              <updateVar name="timer" value="0" type="double"/>
+              <updateVar name="isTiming" value="false" type="bool"/>
+              <onEntity name="lampnotice">
+                <setActive value="false"/>
+              </onEntity>
+            </keyPress>
+            <keyPress value="KEY_F">
+              <updateVar name="timer" value="0" type="double"/>
+              <updateVar name="isTiming" value="false" type="bool"/>
+              <onEntity name="lampnotice">
+                <setActive value="false"/>
+              </onEntity>
+            </keyPress>
+            <keyPress value="KEY_W">
+              <updateVar name="timer" value="0" type="double"/>
+              <updateVar name="isTiming" value="false" type="bool"/>
+              <onEntity name="lampnotice">
+                <setActive value="false"/>
+              </onEntity>
+            </keyPress>
+            <keyPress value="KEY_D">
+              <updateVar name="timer" value="0" type="double"/>
+              <updateVar name="isTiming" value="false" type="bool"/>
+              <onEntity name="lampnotice">
+                <setActive value="false"/>
+              </onEntity>
+            </keyPress>
+            <keyPress value="KEY_S">
+              <updateVar name="timer" value="0" type="double"/>
+              <updateVar name="isTiming" value="false" type="bool"/>
+              <onEntity name="lampnotice">
+                <setActive value="false"/>
+              </onEntity>
+            </keyPress>
+            <keyPress value="KEY_A">
+              <updateVar name="timer" value="0" type="double"/>
+              <updateVar name="isTiming" value="false" type="bool"/>
+              <onEntity name="lampnotice">
+                <setActive value="false"/>
+              </onEntity>
+            </keyPress>
+        </ifVarGreater>
+      </ifVar>
+
+      
       
       
       
@@ -47,6 +78,7 @@
           <onEntity name="lampnotice">
             <setActive value="true"/>
           </onEntity>
+          <updateVar name="isTiming" type="bool" value="true"/>
         </ifVar>
     </onCollision>
 

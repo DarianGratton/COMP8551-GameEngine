@@ -31,10 +31,6 @@
         <entity name="DogStatue" value="DogStatue"/>
         <entity name="ChickenStatue" value="ChickenStatue"/>
 		<bool name="ifShowMessage" value="false"/>
-		<bool name="keyOne" value="false"/>
-		<bool name="keyTwo" value="false"/>
-		<bool name="keyThree" value="false"/>
-		<bool name="keyFour" value="false"/>
 		<globalBool name="ifOpen" value="false"/>
 		<globalBool name="ifOpened" value="false"/>
     </variables>
@@ -46,30 +42,14 @@
     </start>
 	<checkStatues>
 		<ifGlobalVar name="catLeftDirection" value="1" type="int">
-			<log value="key one open"/>
-			<updateVar name="keyOne" value="true" type="bool"/>
-		</ifGlobalVar>
-		<ifGlobalVar name="catRightDirection" value="3" type="int">
-			<log value="key two open"/>
-			<updateVar name="keyTwo" value="true" type="bool"/>
-		</ifGlobalVar>
-		<ifGlobalVar name="dogDirection" value="0" type="int">
-			<log value="key three open"/>
-			<updateVar name="keyThree" value="true" type="bool"/>
-		</ifGlobalVar>
-		<ifGlobalVar name="chickenDirection" value="0" type="int">
-			<log value="key four open"/>
-			<updateVar name="keyFour" value="true" type="bool"/>
-		</ifGlobalVar>
-		<ifVar name="keyOne" value="true" type="bool">
-			<ifVar name="keyTwo" value="true" type="bool">
-				<ifVar name="keyThree" value="true" type="bool">
-					<ifVar name="keyFour" value="true" type="bool">
+			<ifGlobalVar name="catRightDirection" value="3" type="int">
+				<ifGlobalVar name="dogDirection" value="0" type="int">
+					<ifGlobalVar name="chickenDirection" value="0" type="int">
 						<updateGlobalVar name="ifOpen" value="true" type="bool"/>
-					</ifVar>
-				</ifVar>
-			</ifVar>
-		</ifVar>
+					</ifGlobalVar>
+				</ifGlobalVar>
+			</ifGlobalVar>
+		</ifGlobalVar>
 		<ifGlobalVar name="ifOpen" value="true" type="bool">
 			<onEntity name="Scene4Exit">
 				<setActive value="true"/>
