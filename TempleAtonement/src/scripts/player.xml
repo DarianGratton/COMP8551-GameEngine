@@ -238,7 +238,8 @@
             <moveEntity x="-410" y="220.0" z="0.0" applyDt="false"/>
         </onEntity>
        
-       <matchEntityPos name="cutsceneText"/>
+        <matchEntityPos name="cutsceneText"/>
+        <matchEntityPos name="darkness"/>
 
         <ifVar name="checkMove" type="bool" value="false">
             <updateVar name="isMoving" type="bool" value="false"/>
@@ -348,6 +349,8 @@
 
         <entity name="cutsceneText" value="CutsceneText"/>
         <int name="cutsceneProgressionValue" value="0"/>
+
+        <entity name="darkness" value="Darkness"/>
 
         <entity name="tempCoin" value=""/>
         <!-- Coin persistence globals -->
