@@ -1,10 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.4" tiledversion="1.4.2" orientation="orthogonal" renderorder="right-down" width="33" height="33" tilewidth="32" tileheight="32" infinite="0" nextlayerid="4" nextobjectid="65">
- <objectgroup id="2" name="map10" offsetx="-2.81818" offsety="-13.2727">
+<map version="1.4" tiledversion="1.4.2" orientation="orthogonal" renderorder="right-down" width="33" height="33" tilewidth="32" tileheight="32" infinite="0" nextlayerid="5" nextobjectid="65">
+ <tileset firstgid="1" source="dungeon_wall.tsx"/>
+ <tileset firstgid="529" source="dungeon_floor.tsx"/>
+ <objectgroup id="2" name="map10">
   <object id="1" name="land" type="land" x="0" y="0" width="1056" height="1056">
    <properties>
     <property name="ShaderComp" value="src/res/shaders/Basic.shader"/>
-    <property name="TextureComp" value="../TempleAtonement/texture/map10_floor.png"/>
+    <property name="TextureComp" value="../TempleAtonement/texture/MAP10/map10_floor.png"/>
    </properties>
   </object>
   <object id="2" name="wall1" type="wall" x="4" y="0" width="92" height="1056">
