@@ -1,0 +1,25 @@
+<root>
+
+    <start>
+        <ifGlobalVar name="map09DoorOpen" value="true" type="bool">
+            <changeSprite name="../TempleAtonement/texture/orb_on.png"/>
+        </ifGlobalVar>
+    </start>
+    
+	<variables>
+        <globalBool name="map09DoorOpen" value="false"/>
+        <entity name="door" value="doorBlock"/>
+    </variables>
+	
+    <onCollision>
+        <ifVar name="collisionObject-tag" value="Weapon" type="string">
+			<ifGlobalVar name="map09DoorOpen" value="false" type="bool">
+				<changeSprite name="../TempleAtonement/texture/orb_on.png"/>
+                <updateGlobalVar name="map09DoorOpen" value="true" type="bool" />
+                <onEntity name="door">
+                    <setActive value="false"/>
+                </onEntity>
+			</ifGlobalVar>
+        </ifVar>
+    </onCollision>
+</root>

@@ -101,6 +101,7 @@ void Engine::update() {
     if (willLoadScene) {
         SceneManager::getInstance().loadScene(sceneToLoad);
         willLoadScene = false;
+        lastTime = std::chrono::duration_cast<std::chrono::milliseconds>(clock.now().time_since_epoch());
     }
 
     deltaTime = std::chrono::duration_cast<std::chrono::milliseconds>(clock.now().time_since_epoch()) - lastTime;

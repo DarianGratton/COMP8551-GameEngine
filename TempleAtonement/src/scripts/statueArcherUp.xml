@@ -1,0 +1,68 @@
+<root>
+    <update>
+        <addVar name="attackTimer" type="double" value="deltaTime"/>
+        <ifVarGreater name="attackTimer" type="double" value="2">
+            <updateVar name="attackTimer" value="0.0" type="double"/>
+            <callFunction name="getArrow"/>
+            <callFunction name="shootArrow"/>
+        </ifVarGreater>
+		
+    </update>
+
+    <getArrow>
+        <addGlobalVar name="arrowNum" type="int" value="1"/>
+        <modGlobalVar name="arrowNum" type="int" value="10"/>
+        <ifGlobalVar name="arrowNum" type="int" value="1">
+            <updateVar name="arrowEntity" value="arrow01" type="entity"/>
+        </ifGlobalVar>
+        <ifGlobalVar name="arrowNum" type="int" value="2">
+            <updateVar name="arrowEntity" value="arrow02" type="entity"/>
+        </ifGlobalVar>
+        <ifGlobalVar name="arrowNum" type="int" value="3">
+            <updateVar name="arrowEntity" value="arrow03" type="entity"/>
+        </ifGlobalVar>
+        <ifGlobalVar name="arrowNum" type="int" value="4">
+            <updateVar name="arrowEntity" value="arrow04" type="entity"/>
+        </ifGlobalVar>
+        <ifGlobalVar name="arrowNum" type="int" value="5">
+            <updateVar name="arrowEntity" value="arrow05" type="entity"/>
+        </ifGlobalVar>
+        <ifGlobalVar name="arrowNum" type="int" value="6">
+            <updateVar name="arrowEntity" value="arrow06" type="entity"/>
+        </ifGlobalVar>
+        <ifGlobalVar name="arrowNum" type="int" value="7">
+            <updateVar name="arrowEntity" value="arrow07" type="entity"/>
+        </ifGlobalVar>
+        <ifGlobalVar name="arrowNum" type="int" value="8">
+            <updateVar name="arrowEntity" value="arrow08" type="entity"/>
+        </ifGlobalVar>
+        <ifGlobalVar name="arrowNum" type="int" value="9">
+            <updateVar name="arrowEntity" value="arrow09" type="entity"/>
+        </ifGlobalVar>
+        <ifGlobalVar name="arrowNum" type="int" value="10">
+            <updateVar name="arrowEntity" value="arrow10" type="entity"/>
+        </ifGlobalVar>
+    </getArrow>
+
+    <shootArrow>
+        <matchEntityPos name="arrowEntity"/>
+        <setGlobalEqual name="tempX" type="float" value="distX" isGlobal="false"/>
+        <setGlobalEqual name="tempY" type="float" value="distY" isGlobal="false"/>
+        <onEntity name="arrowEntity">
+            <moveEntityByVars x="tempX" y="tempY" z="tempZ" applyDt="false"/>
+            <callFunction name="fire"/>
+        </onEntity>
+    </shootArrow>
+
+    <variables>
+        <float name="distX" value="0.0"/>
+        <float name="distY" value="40.0"/>
+        
+        <double name="attackTimer" value="0.0"/>
+        <globalInt name="arrowNum" value="0"/>
+        <entity name="arrowEntity" value="arrow01"/>
+        <globalFloat name="tempX" value="0"/>
+        <globalFloat name="tempY" value="0"/>
+        <globalFloat name="tempZ" value="0"/>
+    </variables>
+</root>

@@ -1,0 +1,12 @@
+<root>
+
+    <start>
+        <ifGlobalVar name="map11Flipped" value="true" type="bool">
+            <setActive value="false"/>
+        </ifGlobalVar>
+    </start>
+    
+	<variables>
+        <globalBool name="map11Flipped" value="false"/>
+    </variables>
+</root>

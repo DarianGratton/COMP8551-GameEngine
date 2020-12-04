@@ -1,7 +1,51 @@
 <root>
+    <update>
+        <moveEntityByVars x="xDirection" y="yDirection" z="zDirection" applyDt="true"/>
+        <log value="arrowExists!"/>
+
+        <addVar name="timer" type="double" value="deltaTime"/>
+        <ifVarGreater name="timer" type="double" value="2">
+            <setActive value="false"/>
+        </ifVarGreater>
+    </update>
+
+    <variables>
+        <globalFloat name="tempX" value="0"/>
+        <globalFloat name="tempY" value="0"/>
+        <globalFloat name="tempZ" value="0"/>
+        <float name="xDirection" value="0"/>
+        <float name="yDirection" value="0"/>
+        <float name="zDirection" value="0"/>
+        <double name="timer" value="0.0"/>
+        <float name="angle" value="0.0"/>
+    </variables>
+
     <onCollision>
+        <ifVar name="collisionObject-tag" value="Wall" type="string">
+            <setActive value="false"/>
+        </ifVar>
         <ifVar name="collisionObject-tag" value="Player" type="string">
-            <loadScene name="Scene 1"/>
+            <setActive value="false"/>
+        </ifVar>
+        <ifVar name="collisionObject-tag" value="Shield" type="string">
+            <setActive value="false"/>
+        </ifVar>
+        <ifVar name="collisionObject-tag" value="Switch" type="string">
+            <setActive value="false"/>
+        </ifVar>
+        <ifVar name="collisionObject-tag" value="Chest" type="string">
+            <setActive value="false"/>
         </ifVar>
     </onCollision>
+
+    <fire>
+        <setEqual name="xDirection" type="float" value="tempX" isGlobal="true"/>
+        <setEqual name="yDirection" type="float" value="tempY" isGlobal="true"/>
+
+        <getAngle name="angle" x="xDirection" y="yDirection"/>
+        <setRotation name="angle"/>
+
+        <updateVar name="timer" type="double" value="0.0"/>
+        <setActive value="true"/>
+    </fire>
 </root>

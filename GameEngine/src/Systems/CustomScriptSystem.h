@@ -229,8 +229,10 @@ public:
                         break;
                     }
 
-                    if (!cScript->containsVariable(attributes.at("name")))
-                        return;
+                    if (!cScript->containsVariable(attributes.at("name"))) {
+                        command = command->NextSibling();
+                        continue;
+                    }
 
                     if (type == "int") {
                         int val = cScript.get()->ints.at(attributes.at("name"));
@@ -292,8 +294,10 @@ public:
                         break;
                     }
 
-                    if (!CScript::containsGlobalVariable(attributes.at("name")))
-                        return;
+                    if (!CScript::containsGlobalVariable(attributes.at("name"))) {
+                        command = command->NextSibling();
+                        continue;
+                    }
                     
                     if (type == "int") {
                         int val = CScript::ints.at(attributes.at("name"));
@@ -348,8 +352,10 @@ public:
                         break;
                     }
 
-                    if (!cScript->containsVariable(attributes.at("name")))
-                        return;
+                    if (!cScript->containsVariable(attributes.at("name"))) {
+                        command = command->NextSibling();
+                        continue;
+                    }
 
                     if (type == "int") {
                         int val = cScript.get()->ints.at(attributes.at("name"));
@@ -388,8 +394,10 @@ public:
                         break;
                     }
 
-                    if (!CScript::containsGlobalVariable(attributes.at("name")))
-                        return;
+                    if (!CScript::containsGlobalVariable(attributes.at("name"))) {
+                        command = command->NextSibling();
+                        continue;
+                    }
 
                     if (type == "int") {
                         int val = CScript::ints.at(attributes.at("name"));
@@ -429,8 +437,10 @@ public:
                         break;
                     }
 
-                    if (!cScript->containsVariable(attributes.at("name")))
-                        return;
+                    if (!cScript->containsVariable(attributes.at("name"))) {
+                        command = command->NextSibling();
+                        continue;
+                    }
 
                     if (type == "int") {
                         int val = cScript.get()->ints.at(attributes.at("name"));
@@ -469,8 +479,10 @@ public:
                         break;
                     }
 
-                    if (!CScript::containsGlobalVariable(attributes.at("name")))
-                        return;
+                    if (!CScript::containsGlobalVariable(attributes.at("name"))) {
+                        command = command->NextSibling();
+                        continue;
+                    }
 
                     if (type == "int") {
                         int val = CScript::ints.at(attributes.at("name"));
@@ -649,6 +661,12 @@ public:
 
                 if (name == "setPos")
                     CScript::setPosition(attributes.at("x"), attributes.at("y"), cScript);
+
+                if (name == "getAngle")
+                    CScript::getAngle(attributes.at("name"), attributes.at("x"), attributes.at("y"), cScript);
+
+                if (name == "setRotation")
+                    CScript::setRotation(attributes.at("name"), cScript);
 
                 command = command->NextSibling();
             }

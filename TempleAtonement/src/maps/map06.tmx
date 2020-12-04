@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.4" tiledversion="1.4.3" orientation="orthogonal" renderorder="left-up" width="30" height="30" tilewidth="32" tileheight="32" infinite="0" nextlayerid="4" nextobjectid="49">
+<map version="1.4" tiledversion="1.4.2" orientation="orthogonal" renderorder="left-up" width="30" height="30" tilewidth="32" tileheight="32" infinite="0" nextlayerid="4" nextobjectid="50">
  <tileset firstgid="1" source="../../../../fsm_extra02_A2.tsx"/>
  <tileset firstgid="1" source="../../../../fsm_extra02_A4.tsx"/>
  <objectgroup id="2" name="Object Layer 1">
@@ -105,15 +105,6 @@
     <property name="TextureComp" value="../TempleAtonement/texture/player_up.png"/>
    </properties>
   </object>
-  <object id="25" name="weaponEntity" x="480" y="832" width="32" height="32" visible="0">
-   <properties>
-    <property name="AudioSource" value="../TempleAtonement/src/sounds/tm2_swing004.ogg,0,0,fx"/>
-    <property name="BoxCollider" value="28,28,0,0,0,1,0"/>
-    <property name="ShaderComp" value="src/res/shaders/Basic.shader"/>
-    <property name="Tag" value="Weapon"/>
-    <property name="TextureComp" value="../TempleAtonement/texture/slash.png"/>
-   </properties>
-  </object>
   <object id="27" name="chest" x="657.333" y="480" width="64" height="64">
    <properties>
     <property name="BoxCollider" value="64,64,0,-10,0,0,0"/>
@@ -207,6 +198,15 @@
     <property name="CustomScript" value="../TempleAtonement/src/scripts/PlayMusic2.xml"/>
    </properties>
   </object>
+  <object id="25" name="weaponEntity" x="480" y="832" width="32" height="32" visible="0">
+   <properties>
+    <property name="AudioSource" value="../TempleAtonement/src/sounds/tm2_swing004.ogg,0,0,fx"/>
+    <property name="BoxCollider" value="28,28,0,0,0,1,0"/>
+    <property name="ShaderComp" value="src/res/shaders/Basic.shader"/>
+    <property name="Tag" value="Weapon"/>
+    <property name="TextureComp" value="../TempleAtonement/texture/slash.png"/>
+   </properties>
+  </object>
   <object id="40" name="lampEntity" x="477" y="863.333" width="40.6667" height="41.3333" visible="0">
    <properties>
     <property name="AudioSource" value="../TempleAtonement/src/sounds/tm2_swing004.ogg,0,0,fx"/>
@@ -221,6 +221,12 @@
     <property name="BoxCollider" value="28,28,0,0,0,1,0"/>
     <property name="ShaderComp" value="src/res/shaders/Basic.shader"/>
     <property name="TextureComp" value="../TempleAtonement/texture/shield.png"/>
+   </properties>
+  </object>
+  <object id="49" name="Darkness" x="183.248" y="568.263" width="960" height="960">
+   <properties>
+    <property name="ShaderComp" value="src/res/shaders/Basic.shader"/>
+    <property name="TextureComp" value="../TempleAtonement/texture/MAP06/Darkness.png"/>
    </properties>
   </object>
   <object id="43" name="lampnotice" x="534.667" y="448" width="320" height="128" visible="0">

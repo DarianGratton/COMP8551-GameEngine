@@ -16,30 +16,38 @@
 			<!-- Left -->
 			<changeSprite name="../TempleAtonement/texture/MAP03/dog_Statue_left.png"/>
 		</ifGlobalVar>
+        
+        <ifVar name="Timing" type="bool" value="true">
+            <addVar name="Timer" type="double" value="deltaTime"/>
+            <ifVarGreater name="Timer" value="0.5" type="double">
+                <updateVar name="Timing" value="false" type="bool"/>
+                <updateVar name="Timer" value="0" type="double"/>
+            </ifVarGreater>
+        </ifVar>
     </update>
     
     <interacted>
-		<ifGlobalVarLess name="dogDirection" value="4" type="int">
-			<addGlobalVar name="dogDirection" value="1" type="int"/>
-		</ifGlobalVarLess>
-		<ifGlobalVarGreater name="dogDirection" value="3" type="int">
-			<updateGlobalVar name="dogDirection" value="0" type="int"/>
-		</ifGlobalVarGreater>
+        <addGlobalVar name="dogDirection" value="1" type="int"/>
+        <modGlobalVar name="dogDirection" value="4" type="int"/>
     </interacted>
 
     <variables>
         <globalInt name="dogDirection" value="2"/> <!-- 0 - up, 1 - right, 2 - down, 3 - left -->
         <entity name="weaponEntity" value="weaponEntity"/>
         <entity name="Player" value="Player"/>
+        
+        <double name="Timer" value="0.0"/>
+        <bool name="Timing" value="false"/>
     </variables>
     <start>
 
     </start>
     <onCollision>
-		<ifVar name="collisionObject-tag" value="Player" type="string">
-            <keyPress value="KEY_E">
+        <ifVar name="Timing" value="false" type="bool">
+            <ifVar name="collisionObject-tag" value="Weapon" type="string">
+                <updateVar name="Timing" value="true" type="bool"/>
                 <callFunction name="interacted" />
-            </keyPress>
+            </ifVar>
         </ifVar>
     </onCollision>
 </root>

@@ -13,7 +13,7 @@
     <property name="TextureComp" value="../TempleAtonement/texture/MAP04/MAP04_WALLS.png"/>
    </properties>
   </object>
-  <object id="25" name="wall8" type="wall" x="0.37954" y="-2.21794" width="64" height="256">
+  <object id="25" name="wall8" type="wall" x="0" y="0" width="64" height="256">
    <properties>
     <property name="BoxCollider" value="64,256,0,0,0,0,0"/>
    </properties>
@@ -35,7 +35,7 @@
   </object>
   <object id="26" name="wall4" type="wall" x="576" y="352" width="64" height="224">
    <properties>
-    <property name="BoxCollider" value="64,288,0,0,0,0,0"/>
+    <property name="BoxCollider" value="64,224,0,0,0,0,0"/>
    </properties>
   </object>
   <object id="18" name="wall3" type="wall" x="576" y="0" width="64" height="256">
@@ -86,32 +86,6 @@
     <property name="ShaderComp" value="src/res/shaders/Basic.shader"/>
     <property name="Tag" value="Player"/>
     <property name="TextureComp" value="../TempleAtonement/texture/player_up.png"/>
-   </properties>
-  </object>
-  <object id="41" name="weaponEntity" x="327.333" y="552.667" width="40" height="40" visible="0">
-   <properties>
-    <property name="AudioSource" value="../TempleAtonement/src/sounds/tm2_swing004.ogg,0,0,fx"/>
-    <property name="BoxCollider" value="28,28,0,0,0,1,0"/>
-    <property name="ShaderComp" value="src/res/shaders/Basic.shader"/>
-    <property name="Tag" value="Weapon"/>
-    <property name="TextureComp" value="../TempleAtonement/texture/slash.png"/>
-   </properties>
-  </object>
-  <object id="53" name="shieldEntity" x="274.347" y="313.137" width="71.3334" height="59.3333" visible="0">
-   <properties>
-    <property name="AudioSource" value="../TempleAtonement/src/sounds/tm2_swing004.ogg,0,0,fx"/>
-    <property name="BoxCollider" value="28,28,0,0,0,1,0"/>
-    <property name="ShaderComp" value="src/res/shaders/Basic.shader"/>
-    <property name="TextureComp" value="../TempleAtonement/texture/shield.png"/>
-   </properties>
-  </object>
-  <object id="46" name="lampEntity" x="326.409" y="549.231" width="43.2231" height="43.9683" visible="0">
-   <properties>
-    <property name="AudioSource" value="../TempleAtonement/src/sounds/tm2_swing004.ogg,0,0,fx"/>
-    <property name="BoxCollider" value="28,28,0,0,0,1,0"/>
-    <property name="ShaderComp" value="src/res/shaders/Basic.shader"/>
-    <property name="Tag" value="Lamp"/>
-    <property name="TextureComp" value="../TempleAtonement/texture/lamp.png"/>
    </properties>
   </object>
   <object id="27" name="Monster1" x="224" y="128" width="24" height="32">
@@ -236,6 +210,80 @@
     <property name="CustomScript" value="../TempleAtonement/src/scripts/PlayMusic2.xml"/>
    </properties>
   </object>
+  <object id="47" name="doorblock9" type="wall" x="0" y="256" width="64" height="96">
+   <properties>
+    <property name="BoxCollider" value="64,96,0,0,0,0,0"/>
+    <property name="CustomScript" value="../TempleAtonement/src/scripts/DoorBlockto9.xml"/>
+    <property name="ShaderComp" value="src/res/shaders/Basic.shader"/>
+    <property name="Tag" value="Block"/>
+    <property name="TextureComp" value="../TempleAtonement/texture/door_block.png"/>
+   </properties>
+  </object>
+  <object id="48" name="chest" x="288" y="256" width="64" height="64">
+   <properties>
+    <property name="BoxCollider" value="64,64,0,-10,0,0,0"/>
+    <property name="CustomScript" value="../TempleAtonement/src/scripts/LampChest.xml"/>
+    <property name="ShaderComp" value="src/res/shaders/Basic.shader"/>
+    <property name="Tag" value="Chest"/>
+    <property name="TextureComp" value="../TempleAtonement/texture/chest_closed.png"/>
+   </properties>
+  </object>
+  <object id="51" name="doorblock5" type="wall" x="576" y="256" width="64" height="96">
+   <properties>
+    <property name="BoxCollider" value="64,96,0,0,0,0,0"/>
+    <property name="CustomScript" value="../TempleAtonement/src/scripts/DoorBlockto5.xml"/>
+    <property name="ShaderComp" value="src/res/shaders/Basic.shader"/>
+    <property name="Tag" value="Block"/>
+    <property name="TextureComp" value="../TempleAtonement/texture/door_block.png"/>
+   </properties>
+  </object>
+  <object id="52" name="doorblock13" x="288" y="0" width="96" height="64">
+   <properties>
+    <property name="BoxCollider" value="96,64,0,0,0,0,0"/>
+    <property name="CustomScript" value="../TempleAtonement/src/scripts/DoorBlockto13.xml"/>
+    <property name="ShaderComp" value="src/res/shaders/Basic.shader"/>
+    <property name="Tag" value="Block"/>
+    <property name="TextureComp" value="../TempleAtonement/texture/door_block.png"/>
+   </properties>
+  </object>
+  <object id="41" name="weaponEntity" x="327.333" y="552.667" width="40" height="40" visible="0">
+   <properties>
+    <property name="AudioSource" value="../TempleAtonement/src/sounds/tm2_swing004.ogg,0,0,fx"/>
+    <property name="BoxCollider" value="28,28,0,0,0,1,0"/>
+    <property name="ShaderComp" value="src/res/shaders/Basic.shader"/>
+    <property name="Tag" value="Weapon"/>
+    <property name="TextureComp" value="../TempleAtonement/texture/slash.png"/>
+   </properties>
+  </object>
+  <object id="53" name="shieldEntity" x="274.347" y="313.137" width="71.3334" height="59.3333" visible="0">
+   <properties>
+    <property name="AudioSource" value="../TempleAtonement/src/sounds/tm2_swing004.ogg,0,0,fx"/>
+    <property name="BoxCollider" value="28,28,0,0,0,1,0"/>
+    <property name="ShaderComp" value="src/res/shaders/Basic.shader"/>
+    <property name="TextureComp" value="../TempleAtonement/texture/shield.png"/>
+   </properties>
+  </object>
+  <object id="46" name="lampEntity" x="326.409" y="549.231" width="43.2231" height="43.9683" visible="0">
+   <properties>
+    <property name="AudioSource" value="../TempleAtonement/src/sounds/tm2_swing004.ogg,0,0,fx"/>
+    <property name="BoxCollider" value="28,28,0,0,0,1,0"/>
+    <property name="ShaderComp" value="src/res/shaders/Basic.shader"/>
+    <property name="Tag" value="Lamp"/>
+    <property name="TextureComp" value="../TempleAtonement/texture/lamp.png"/>
+   </properties>
+  </object>
+  <object id="54" name="lampnotice" x="160" y="192" width="320" height="128" visible="0">
+   <properties>
+    <property name="ShaderComp" value="src/res/shaders/Basic.shader"/>
+    <property name="TextureComp" value="../TempleAtonement/texture/lampnotice.png"/>
+   </properties>
+  </object>
+  <object id="61" name="bossdoornotice" x="185.04" y="8.28692" width="293.172" height="99.6814" visible="0">
+   <properties>
+    <property name="ShaderComp" value="src/res/shaders/Basic.shader"/>
+    <property name="TextureComp" value="../TempleAtonement/texture/bossdoornotice.png"/>
+   </properties>
+  </object>
   <object id="42" name="scoreFirstDigitEntity" x="599.755" y="-58.3075" width="40" height="40">
    <properties>
     <property name="ShaderComp" value="src/res/shaders/Basic.shader"/>
@@ -262,48 +310,6 @@
     <property name="ShaderComp" value="src/res/shaders/Basic.shader"/>
     <property name="Tag" value="scoreFourthDigitEntity"/>
     <property name="TextureComp" value="../TempleAtonement/texture/Numbers/0.png"/>
-   </properties>
-  </object>
-  <object id="47" name="doorblock9" type="wall" x="0" y="256" width="64" height="96">
-   <properties>
-    <property name="BoxCollider" value="32,60,0,-10,0,0,0"/>
-    <property name="CustomScript" value="../TempleAtonement/src/scripts/DoorBlockto9.xml"/>
-    <property name="ShaderComp" value="src/res/shaders/Basic.shader"/>
-    <property name="Tag" value="Block"/>
-    <property name="TextureComp" value="../TempleAtonement/texture/door_block.png"/>
-   </properties>
-  </object>
-  <object id="48" name="chest" x="288" y="256" width="64" height="64">
-   <properties>
-    <property name="BoxCollider" value="64,64,0,-10,0,0,0"/>
-    <property name="CustomScript" value="../TempleAtonement/src/scripts/LampChest.xml"/>
-    <property name="ShaderComp" value="src/res/shaders/Basic.shader"/>
-    <property name="Tag" value="Chest"/>
-    <property name="TextureComp" value="../TempleAtonement/texture/chest_closed.png"/>
-   </properties>
-  </object>
-  <object id="51" name="doorblock5" type="wall" x="576" y="256" width="64" height="96">
-   <properties>
-    <property name="BoxCollider" value="32,60,0,-10,0,0,0"/>
-    <property name="CustomScript" value="../TempleAtonement/src/scripts/DoorBlockto5.xml"/>
-    <property name="ShaderComp" value="src/res/shaders/Basic.shader"/>
-    <property name="Tag" value="Block"/>
-    <property name="TextureComp" value="../TempleAtonement/texture/door_block.png"/>
-   </properties>
-  </object>
-  <object id="52" name="doorblock13" x="288" y="0" width="96" height="64">
-   <properties>
-    <property name="BoxCollider" value="96,64,0,0,0,0,0"/>
-    <property name="CustomScript" value="../TempleAtonement/src/scripts/DoorBlockto13.xml"/>
-    <property name="ShaderComp" value="src/res/shaders/Basic.shader"/>
-    <property name="Tag" value="Block"/>
-    <property name="TextureComp" value="../TempleAtonement/texture/door_block.png"/>
-   </properties>
-  </object>
-  <object id="54" name="lampnotice" x="160" y="192" width="320" height="128" visible="0">
-   <properties>
-    <property name="ShaderComp" value="src/res/shaders/Basic.shader"/>
-    <property name="TextureComp" value="../TempleAtonement/texture/lampnotice.png"/>
    </properties>
   </object>
   <object id="55" name="healthFirstDigitEntity" x="2.43344" y="-58.5873" width="40" height="40">
@@ -339,12 +345,6 @@
     <property name="ShaderComp" value="src/res/shaders/Basic.shader"/>
     <property name="Tag" value="healthFifthDigitEntity"/>
     <property name="TextureComp" value="../TempleAtonement/texture/health_icon.png"/>
-   </properties>
-  </object>
-  <object id="61" name="bossdoornotice" x="185.04" y="8.28692" width="293.172" height="99.6814" visible="0">
-   <properties>
-    <property name="ShaderComp" value="src/res/shaders/Basic.shader"/>
-    <property name="TextureComp" value="../TempleAtonement/texture/bossdoornotice.png"/>
    </properties>
   </object>
  </objectgroup>

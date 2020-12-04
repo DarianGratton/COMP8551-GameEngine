@@ -108,7 +108,7 @@ void Scene::load(vector<Entity>& persistentEntities) {
             x = x + width/2;
             y = (y + height/2) * -1;
             z = layerNum / 1000.f;
-            ent.assign<Transform>(x, y, z, rotAngle, 0, 0, 1);
+            ent.assign<Transform>(x, y, z, -rotAngle, 0, 0, 1);
             layerNum++;
             //TODO width and height need to be applied to sprite vertices
             ent.assign<SpriteVertices>(
