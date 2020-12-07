@@ -29,7 +29,7 @@
   <object id="243" name="FinalBoss" x="231.133" y="103.873" width="96" height="96">
    <properties>
     <property name="AudioSource" value="../TempleAtonement/src/sounds/Phantom_hurt1.ogg,0,0,fx"/>
-    <property name="BoxCollider" value="96,96,0,0,0,0,0"/>
+    <property name="BoxCollider" value="92,88,0,-4,0,0,0"/>
     <property name="CustomScript" value="../TempleAtonement/src/scripts/Boss.xml"/>
     <property name="ShaderComp" value="src/res/shaders/Basic.shader"/>
     <property name="Tag" value="Enemy"/>

@@ -217,7 +217,7 @@
     <property name="TextureComp" value="../TempleAtonement/texture/shield.png"/>
    </properties>
   </object>
-  <object id="33" name="SignMessage" x="64" y="64" width="512" height="512" visible="0">
+  <object id="33" name="SignMessage" x="170" y="140" width="300" height="300" visible="0">
    <properties>
     <property name="ShaderComp" value="src/res/shaders/Basic.shader"/>
     <property name="TextureComp" value="../TempleAtonement/texture/MAP03/MAP03_SIGN_Message.png"/>

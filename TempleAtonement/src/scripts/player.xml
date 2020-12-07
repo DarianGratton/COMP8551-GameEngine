@@ -421,6 +421,7 @@
     </setInteracted>
 
     <updatePointDisplay>
+        <log value="Inside updatePointDisplay!!"/>
         <setEqual name="scoreFirstDigit" type="int" value="points" isGlobal="true"/>
         <modVar name="scoreFirstDigit" type="int" value="10"/>
 
@@ -572,26 +573,51 @@
 				<changeSprite name="../TempleAtonement/texture/transparent.png"/>
 			</onEntity>
 		</ifGlobalVarLess>
+		<ifGlobalVar name="health" value="5" type="int">
+			<onEntity name="healthFifthDigitEntity">
+				<changeSprite name="../TempleAtonement/texture/health_icon.png"/>
+			</onEntity>
+		</ifGlobalVar>
 		<ifGlobalVarLess name="health" value="4" type="int">
 			<onEntity name="healthFourthDigitEntity">
 				<changeSprite name="../TempleAtonement/texture/transparent.png"/>
 			</onEntity>
 		</ifGlobalVarLess>
+		<ifGlobalVar name="health" value="4" type="int">
+			<onEntity name="healthFourthDigitEntity">
+				<changeSprite name="../TempleAtonement/texture/health_icon.png"/>
+			</onEntity>
+		</ifGlobalVar>
 		<ifGlobalVarLess name="health" value="3" type="int">
 			<onEntity name="healthThirdDigitEntity">
 				<changeSprite name="../TempleAtonement/texture/transparent.png"/>
 			</onEntity>
 		</ifGlobalVarLess>
+		<ifGlobalVar name="health" value="3" type="int">
+			<onEntity name="healthThirdDigitEntity">
+				<changeSprite name="../TempleAtonement/texture/health_icon.png"/>
+			</onEntity>
+		</ifGlobalVar>
 		<ifGlobalVarLess name="health" value="2" type="int">
 			<onEntity name="healthSecondDigitEntity">
 				<changeSprite name="../TempleAtonement/texture/transparent.png"/>
 			</onEntity>
 		</ifGlobalVarLess>
+		<ifGlobalVar name="health" value="2" type="int">
+			<onEntity name="healthSecondDigitEntity">
+				<changeSprite name="../TempleAtonement/texture/health_icon.png"/>
+			</onEntity>
+		</ifGlobalVar>
 		<ifGlobalVarLess name="health" value="1" type="int">
 			<onEntity name="healthFirstDigitEntity">
 				<changeSprite name="../TempleAtonement/texture/transparent.png"/>
 			</onEntity>
 		</ifGlobalVarLess>
+		<ifGlobalVar name="health" value="1" type="int">
+			<onEntity name="healthFirstDigitEntity">
+				<changeSprite name="../TempleAtonement/texture/health_icon.png"/>
+			</onEntity>
+		</ifGlobalVar>
 
     </updatePointDisplay>
     <updatePos>
