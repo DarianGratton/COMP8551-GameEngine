@@ -48,8 +48,8 @@ Engine::Engine() {
 void Engine::initialize() {
     //initialize
     // screen res
-    const unsigned int SCR_WIDTH = 960;
-    const unsigned int SCR_HEIGHT = 540;
+    const unsigned int SCR_WIDTH = 1440;
+    const unsigned int SCR_HEIGHT = 810;
 
     //Put setup here
     jobPool.resize(std::thread::hardware_concurrency());

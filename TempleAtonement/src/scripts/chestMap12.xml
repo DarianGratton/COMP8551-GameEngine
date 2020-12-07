@@ -5,6 +5,7 @@
        <entity name="keynotice" value="keynotice"/>
        <double name="timer" value="0"/>
        <bool name="isTiming" value="false"/>
+       <entity name="player" value="Player"/>
     </variables>
 	
     <interacted>
@@ -73,6 +74,14 @@
     <onCollision>
         <ifVar name="collisionObject-tag" value="Weapon" type="string">
           <changeSprite name="../TempleAtonement/texture/chest_opened.png"/>
+          <ifGlobalVar name="obtainedKeyMap12" value="false" type="bool">
+            <ifGlobalVarLess name="health" value="5" type="int">
+              <addGlobalVar name="health" value="1" type="int"/>
+              <onEntity name="player">
+                <callFunction name="updatePointDisplay"/>
+              </onEntity>
+            </ifGlobalVarLess>
+          </ifGlobalVar>
           <updateGlobalVar name="obtainedKeyMap12" value="true" type="bool"/>
           <onEntity name="keynotice">
             <setActive value="true"/>
